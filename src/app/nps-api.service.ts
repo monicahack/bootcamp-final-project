@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ParkResponse, Data, Activities } from './interface';
+import { ParkResponse, Park, Activities } from './interface';
 
 
 @Injectable({
@@ -18,7 +18,7 @@ export class NpsApiService {
   constructor(public client: HttpClient) { }
   
   getParks() {
-    let parksPageURL = this.parksURL + '&page=1';
-    return this.client.get<ParkResponse>(this.parksURL, { params: { page: 1 } });
+    let parksPageURL = this.parksURL;
+    return this.client.get<ParkResponse>(this.parksURL);
   }
 }

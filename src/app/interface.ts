@@ -1,7 +1,7 @@
 export interface ParkResponse {
-    data:Data[];
+    data:Park[];
 }
-export interface Data {
+export interface Park {
     fullName:string;
     description:string;
     activities:Activities[];

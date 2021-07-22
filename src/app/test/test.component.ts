@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NpsApiService } from '../nps-api.service';
-import { ParkResponse, Data, Activities } from '../interface';
+import { ParkResponse, Park, Activities } from '../interface';
 
 @Component({
   selector: 'app-test',
@@ -8,12 +8,13 @@ import { ParkResponse, Data, Activities } from '../interface';
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit {
-  data: Data[] = [];
+  data: Park[] = [];
   constructor(public api:NpsApiService) { }
 
   ngOnInit(): void {
     this.api.getParks().subscribe((data) => {
-      this.data  = data.data.fullName;
+      this.data  = data.data;
+      console.log(this.data);
   });
   
   }
