@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ParkDetailPageComponent implements OnInit {
   parkCode: string = '';
-  park: any = [];
+  park: any = {};
   data: Park[] = [];
   constructor(public api:NpsApiService, private route:ActivatedRoute) { }
 
