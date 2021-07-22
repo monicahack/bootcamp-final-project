@@ -18,7 +18,13 @@ export class NpsApiService {
   constructor(public client: HttpClient) { }
   
   getParks() {
-    let parksPageURL = this.parksURL;
-    return this.client.get<ParkResponse>(this.parksURL);
+    let parksURL = this.parksURL;
+    return this.client.get<ParkResponse>(parksURL);
   }
+
+  getParkDetails(id: string) {
+    let parksDetailURL = `${this.parksURL}${id}`;
+    return this.client.get<Park>(parksDetailURL);
+  }
+
 }
