@@ -6,6 +6,8 @@ export interface Park {
     description:string;
     activities:Activities[];
     states:string;
+    id:string;
+    parkCode:string;
 }
 
 export interface Activities {
