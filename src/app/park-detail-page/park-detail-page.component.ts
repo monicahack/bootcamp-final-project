@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NpsApiService } from '../nps-api.service';
-import { Park } from '../interface';
+import { Park, Activities, Webcams } from '../interface';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
