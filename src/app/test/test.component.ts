@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NpsApiService } from '../nps-api.service';
-import { ParkResponse, Park, Activities } from '../interface';
+import { Park } from '../interface';
 
 @Component({
   selector: 'app-test',

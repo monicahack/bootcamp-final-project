@@ -6,9 +6,8 @@ import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
   {path: 'test', component: TestComponent},
-  {path: 'park-detail/:id', component: ParkDetailPageComponent}, 
+  {path: 'park-detail/:parkCode', component: ParkDetailPageComponent}, 
   {path: '', component: AppLandingPageComponent, pathMatch:'full'}, 
-
 ];
 
 @NgModule({
