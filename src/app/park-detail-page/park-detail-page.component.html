@@ -1,6 +1,15 @@
 <div class="parkDetail">
-    <div class="parkDetailItem">
-        <h2>{{park.fullName}}</h2>
-
+    <div class="parkDetailItem" *ngIf="park.data.length">
+        <h2>{{park.data[0].fullName}}</h2>
+        <h3>{{park.data[0].addresses[0].city}}, {{park.data[0].addresses[0].stateCode}}</h3>
+        <img class="parkDetailImg" src="{{park.data[0].images[0].url}}">
+        <h3>Description</h3>
+        <p>{{park.data[0].description}}</p>
+        <h3>Activities</h3>
+        <ul class="parkDetailActivities">
+            <li>{{park.data[0].activities[0].name}}</li>
+        </ul>
+        <h3>Hours</h3>
+            <!-- <li>{{park.data[0].operatingHours.standardHours[0]}}</li> -->
     </div>
 </div>
