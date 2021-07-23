@@ -4,12 +4,37 @@ export interface ParkResponse {
 export interface Park {
     fullName:string;
     description:string;
-    activities:Activities[];
+    activities:[{
+        name:string;
+    }]
+    addresses:[{
+        city:string;
+        stateCode:string;
+    }]
     states:string;
     id:string;
     parkCode:string;
+    images:Images[];
+    operatingHours:[{
+    standardHours:[{
+        monday:string;
+        tuesday:string;
+        wednesday:string;
+        thursday:string;
+        friday:string;
+        saturday:string;
+        sunday:string;}] 
+    }]
 }
 
 export interface Activities {
     name:string;
+}
+
+export interface Images {
+    url:string;
+}
+
+export interface Webcams {
+    url:string;
 }
