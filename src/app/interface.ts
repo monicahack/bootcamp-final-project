@@ -36,5 +36,8 @@ export interface Images {
 }
 
 export interface Webcams {
-    url:string;
+    data:[{
+        id:string;
+        url:string;
+    }]
 }

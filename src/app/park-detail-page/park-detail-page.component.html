@@ -1,15 +1,28 @@
 <div class="parkDetail">
-    <div class="parkDetailItem" *ngIf="park.data.length">
-        <h2>{{park.data[0].fullName}}</h2>
-        <h3>{{park.data[0].addresses[0].city}}, {{park.data[0].addresses[0].stateCode}}</h3>
-        <img class="parkDetailImg" src="{{park.data[0].images[0].url}}">
-        <h3>Description</h3>
-        <p>{{park.data[0].description}}</p>
-        <h3>Activities</h3>
+    <ng-container *ngIf="park.data.length">
+    <div class="parkDetailItem" *ngFor="let parks of park.data, let i =index;">
+        <h2>{{parks.fullName}}</h2>
+        <h3>{{parks.addresses[0].city}}, {{parks.addresses[0].stateCode}}</h3>
+        <img class="parkDetailImg" src="{{parks.images[0].url}}">
+        <h3 *ngIf="parks.description">Description</h3>
+        <p>{{parks.description}}</p>
+        <h3 *ngIf="parks.activities.length">Activities</h3>
         <ul class="parkDetailActivities">
-            <li>{{park.data[0].activities[0].name}}</li>
+            <li>{{parks.activities[i].name}}</li>
         </ul>
-        <h3>Hours</h3>
-            <!-- <li>{{park.data[0].operatingHours.standardHours[0]}}</li> -->
+        <h3 *ngIf="parks.operatingHours[i].standardHours">Hours</h3>
+        <ul class="parkDetailHours">
+            <li *ngIf="parks.operatingHours[i].standardHours.monday"><strong>Monday:</strong> {{parks.operatingHours[i].standardHours.monday}}</li>
+            <li *ngIf="parks.operatingHours[i].standardHours.tuesday"><strong>Tuesday:</strong> {{parks.operatingHours[i].standardHours.tuesday}}</li>
+            <li *ngIf="parks.operatingHours[i].standardHours.wednesday"><strong>Wednesday:</strong> {{parks.operatingHours[i].standardHours.wednesday}}</li>
+            <li *ngIf="parks.operatingHours[i].standardHours.thursday"><strong>Thursday:</strong> {{parks.operatingHours[i].standardHours.thursday}}</li>
+            <li *ngIf="parks.operatingHours[i].standardHours.friday"><strong>Friday:</strong> {{parks.operatingHours[i].standardHours.friday}}</li>
+            <li *ngIf="parks.operatingHours[i].standardHours.saturday"><strong>Saturday:</strong> {{parks.operatingHours[i].standardHours.saturday}}</li>
+            <li *ngIf="parks.operatingHours[i].standardHours.sunday"><strong>Sunday:</strong> {{parks.operatingHours[i].standardHours.sunday}}</li>
+        </ul>
+        <span *ngIf="webcam">
+            <a href='https://www.nps.gov/subjects/air/webcams.htm?site={{parkCode}}'><button class="parkDetailWebcam">View Live Webcam</button></a>
+        </span>    
     </div>
+</ng-container>
 </div>
