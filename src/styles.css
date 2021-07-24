@@ -2,3 +2,18 @@
 *{
     font-family: 'Poppins', sans-serif;
 }
+
+p, h2, h3, h4 {
+    max-width: 400px;
+}
+
+a {
+    text-decoration: none;
+    /* color: #396CB4; copied from ticketmaster - need to update color*/
+}
+
+@media only screen and (min-width: 768px) {
+    p {
+        max-width: 800px;
+    }
+}
