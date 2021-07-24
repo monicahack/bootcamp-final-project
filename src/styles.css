@@ -3,17 +3,30 @@
     font-family: 'Poppins', sans-serif;
 }
 
-p, h2, h3, h4 {
+p, h1, h2, h3, h4 {
     max-width: 400px;
 }
 
 a {
     text-decoration: none;
-    /* color: #396CB4; copied from ticketmaster - need to update color*/
+    color: #cc9a4b;
+}
+
+button {
+    padding: 12px;
+    background-color: #354739;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bolder;
+    cursor: pointer;
+    width: 200px;
 }
 
 @media only screen and (min-width: 768px) {
-    p {
+    p, h1, h2, h3, h4 {
         max-width: 800px;
     }
+
 }
