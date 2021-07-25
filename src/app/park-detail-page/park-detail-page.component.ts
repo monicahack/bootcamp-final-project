@@ -21,7 +21,7 @@ export class ParkDetailPageComponent implements OnInit {
       this.park = data;
       console.log(this.park.data);
     });
-    this.api.getWebcam(this.parkCode).subscribe((data) => {
+    this.api.getWebcam().subscribe((data) => {
       this.webcam = data;
       console.log(this.webcam.data);
     });

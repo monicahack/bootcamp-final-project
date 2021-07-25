@@ -8,7 +8,7 @@
         <p>{{parks.description}}</p>
         <h3 *ngIf="parks.activities.length">Activities</h3>
         <ul class="parkDetailActivities">
-            <li>{{parks.activities[i].name}}</li>
+            <li *ngFor="let activity of parks.activities | slice:0:20; let i =index;">{{parks.activities[i].name}}</li>
         </ul>
         <h3 *ngIf="parks.operatingHours[i].standardHours">Hours</h3>
         <ul class="parkDetailHours">
@@ -20,9 +20,9 @@
             <li *ngIf="parks.operatingHours[i].standardHours.saturday"><strong>Saturday:</strong> {{parks.operatingHours[i].standardHours.saturday}}</li>
             <li *ngIf="parks.operatingHours[i].standardHours.sunday"><strong>Sunday:</strong> {{parks.operatingHours[i].standardHours.sunday}}</li>
         </ul>
-        <span *ngIf="webcam">
+        <!-- <span *ngIf="webcam.data.relatedParks.parkCode === parks.parkCode"> -->
             <a href='https://www.nps.gov/subjects/air/webcams.htm?site={{parkCode}}'><button class="parkDetailWebcam">View Live Webcam</button></a>
-        </span>    
+        <!-- </span>     -->
     </div>
 </ng-container>
 </div>
