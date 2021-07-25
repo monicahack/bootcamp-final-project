@@ -15,6 +15,19 @@ ul.parkDetailActivities, ul.parkDetailHours {
     list-style: none;
 }
 
+ul.parkDetailActivities {
+    display: flex;
+    flex-direction: row;
+}
+
+li.parkActivitiesLeft, li.parkActivitiesRight {
+    width: 50%;
+}
+
+.parkActivitiesRight {
+    margin-left: 100px;
+}
+
 li {
     margin-left: -40px;
 }
