@@ -8,30 +8,7 @@
         <p>{{parks.description}}</p>
         <h3 *ngIf="parks.activities.length">Activities</h3>
         <ul class="parkDetailActivities">
-        <div class="parkActivitiesLeft">
-            <li *ngIf="parks.activities[i]">{{parks.activities[i].name}}</li>
-            <li *ngIf="parks.activities[i + 1]">{{parks.activities[i + 1].name}}</li>
-            <li *ngIf="parks.activities[i + 2]">{{parks.activities[i + 2].name}}</li>
-            <li *ngIf="parks.activities[i + 3]">{{parks.activities[i + 3].name}}</li>
-            <li *ngIf="parks.activities[i + 4]">{{parks.activities[i + 4].name}}</li>
-            <li *ngIf="parks.activities[i + 5]">{{parks.activities[i + 5].name}}</li>
-            <li *ngIf="parks.activities[i + 6]">{{parks.activities[i + 6].name}}</li>
-            <li *ngIf="parks.activities[i + 7]">{{parks.activities[i + 7].name}}</li>
-            <li *ngIf="parks.activities[i + 8]">{{parks.activities[i + 8].name}}</li>
-            <li *ngIf="parks.activities[i + 9]">{{parks.activities[i + 9].name}}</li>
-        </div>
-        <div class="parkActivitiesRight">
-            <li *ngIf="parks.activities[i + 10]">{{parks.activities[i + 10].name}}</li>
-            <li *ngIf="parks.activities[i + 11]">{{parks.activities[i + 11].name}}</li>
-            <li *ngIf="parks.activities[i + 12]">{{parks.activities[i + 12].name}}</li>
-            <li *ngIf="parks.activities[i + 13]">{{parks.activities[i + 13].name}}</li>
-            <li *ngIf="parks.activities[i + 14]">{{parks.activities[i + 14].name}}</li>
-            <li *ngIf="parks.activities[i + 15]">{{parks.activities[i + 15].name}}</li>
-            <li *ngIf="parks.activities[i + 16]">{{parks.activities[i + 16].name}}</li>
-            <li *ngIf="parks.activities[i + 17]">{{parks.activities[i + 17].name}}</li>
-            <li *ngIf="parks.activities[i + 18]">{{parks.activities[i + 18].name}}</li>
-            <li *ngIf="parks.activities[i + 19]">{{parks.activities[i + 19].name}}</li>
-        </div>    
+            <li *ngFor="let activity of parks.activities | slice:0:20; let i =index;">{{parks.activities[i].name}}</li>
         </ul>
         <h3 *ngIf="parks.operatingHours[i].standardHours">Hours</h3>
         <ul class="parkDetailHours">
