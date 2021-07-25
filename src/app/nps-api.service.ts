@@ -13,8 +13,7 @@ export class NpsApiService {
   amenitiesURL = 'https://developer.nps.gov/api/v1/amenities?api_key=BazAUNaZgkG8JZqeWIj3HTckfHrQsIfrRy2B2daq';
   eventsURL = 'https://developer.nps.gov/api/v1/events?api_key=BazAUNaZgkG8JZqeWIj3HTckfHrQsIfrRy2B2daq';
   thingsToDoURL = 'https://developer.nps.gov/api/v1/thingstodo?api_key=BazAUNaZgkG8JZqeWIj3HTckfHrQsIfrRy2B2daq';
-  // webcamsURL = 'https://developer.nps.gov/api/v1/webcams'
-  webcamURL = 'https://www.nps.gov/subjects/air/webcams.htm'
+  webcamURL = 'https://developer.nps.gov/api/v1/webcams'
   api_key = 'BazAUNaZgkG8JZqeWIj3HTckfHrQsIfrRy2B2daq';
   limit = '467';
   
@@ -30,9 +29,9 @@ export class NpsApiService {
     return this.client.get<Park>(detailURL);
   }
 
-  getWebcam(parkCode: string) {
-    let webcamsURL = `${this.webcamURL}?site=${parkCode}`;
-    return this.client.get<Park>(webcamsURL);
+  getWebcam() {
+    let webcamsURL = `${this.webcamURL}?api_key=${this.api_key}`;
+    return this.client.get<Webcams>(webcamsURL);
   }
 
 }
