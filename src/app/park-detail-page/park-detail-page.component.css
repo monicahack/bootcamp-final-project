@@ -15,7 +15,7 @@ p.parkDetailDescription, ul.parkDetailActivities, ul.parkDetailHours {
 }
 
 img.parkDetailImg {
-    max-width: 400px;
+    max-width: 325px;
     border-radius: 10px;
 }
 
