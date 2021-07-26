@@ -29,8 +29,8 @@ export class NpsApiService {
     return this.client.get<Park>(detailURL);
   }
 
-  getWebcam() {
-    let webcamsURL = `${this.webcamURL}?api_key=${this.api_key}`;
+  getWebcam(parkCode: string) {
+    let webcamsURL = `${this.webcamURL}?parkCode=${parkCode}&api_key=${this.api_key}`;
     return this.client.get<Webcams>(webcamsURL);
   }
 
