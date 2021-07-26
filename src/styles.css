@@ -24,9 +24,32 @@ button {
     width: 200px;
 }
 
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: #CC9C4E;
+    position: -webkit-sticky; 
+    position: sticky;
+    top: 0px;
+}
+
+
 @media only screen and (min-width: 768px) {
     p, h1, h2, h3, h4 {
         max-width: 800px;
+    }
+
+    nav{
+        display: flex;
+        
+    }
+
+}
+
+@media only screen and (min-width: 1024px){
+    nav{
+        display: flex;
+        
     }
 
 }

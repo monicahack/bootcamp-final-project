@@ -3,14 +3,23 @@ button{
     height: 40px; 
 }
 
+.buttonSurprise{
+    background-color: #94C9A9;
+    color:rgb(56, 40, 40);
+}
+
+
+
 .planSection{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: gray;
+    flex-direction: column;
+    background-color: #94C9A9;
     width: 100%;
     height: 50vh;
     margin-bottom: 20px;
+    border-radius: 5px;
 
 }
 
@@ -18,28 +27,52 @@ button{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: gray;
+    flex-direction: column;
+    background-color:#354739;
     width: 100%;
     height: 50vh;
+    border-radius: 5px;
+}
+
+.tentIcon{
+    max-width: 200px;
+    margin-bottom: 30px;
+}
+.thinkingIcon{
+    max-width: 200px;
+    margin-bottom: 30px;
 }
 
 @media only screen and (min-width: 768px) {
     .planSection{
         display: flex;
         justify-content: center;
-        background-color: gray;
+        background-color:#94C9A9;
         width: 100%;
         height: 50vh;
         margin-bottom: 20px;
+        border-radius: 5px;
     
     }
     
     .noPlanSection{
         display: flex;
         justify-content: center;
-        background-color: gray;
+        background-color:#354739;
         width: 100%;
         height: 50vh;
+        border-radius: 5px;
+    }
+    .buttonSurprise{
+        background-color: #94C9A9;
+    }
+    .tentIcon{
+        max-width: 200px;
+        margin-bottom: 30px;
+    }
+    .thinkingIcon{
+        max-width: 200px;
+        margin-bottom: 30px;
     }
 
 }
@@ -52,10 +85,23 @@ button{
         width: 50%;
         height: 100vh;
         margin-right: 20px;
+        border-radius: 5px;
     }
     .noPlanSection{
         width: 50%;
         height: 100vh;
+        border-radius: 5px;
+    }
+    .buttonSurprise{
+        background-color: #94C9A9;
+    }
+    .tentIcon{
+        max-width: 300px;
+        margin-bottom: 30px;
+    }
+    .thinkingIcon{
+        max-width: 300px;
+        margin-bottom: 30px;
     }
 
 }
