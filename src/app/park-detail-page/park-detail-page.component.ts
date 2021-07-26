@@ -11,6 +11,7 @@ export class ParkDetailPageComponent implements OnInit {
   parkCode: string = '';
   park: any = {data:[]};
   webcam: any = {data:[]};
+  url:string = '';
   constructor(public api:NpsApiService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
