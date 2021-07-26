@@ -20,9 +20,10 @@
             <li *ngIf="parks.operatingHours[i].standardHours.saturday"><strong>Saturday:</strong> {{parks.operatingHours[i].standardHours.saturday}}</li>
             <li *ngIf="parks.operatingHours[i].standardHours.sunday"><strong>Sunday:</strong> {{parks.operatingHours[i].standardHours.sunday}}</li>
         </ul>
-        <!-- <span *ngIf="webcam.data.relatedParks.parkCode === parks.parkCode"> -->
-            <a href='https://www.nps.gov/subjects/air/webcams.htm?site={{parkCode}}'><button class="parkDetailWebcam">View Live Webcam</button></a>
-        <!-- </span>     -->
-    </div>
+            <span *ngFor="let webcam of webcam.data">
+                <!-- <a *ngIf="webcam" href='{{webcam.data.url}}'><button class="parkDetailWebcam">View Live Webcam</button></a> -->
+            <a *ngIf="webcam" href='https://www.nps.gov/subjects/air/webcams.htm?site={{parks.parkCode}}'><button class="parkDetailWebcam">View Live Webcam</button></a>
+        </span>    
+        </div>
 </ng-container>
 </div>

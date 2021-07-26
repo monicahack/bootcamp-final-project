@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NpsApiService } from '../nps-api.service';
 import { ActivatedRoute } from '@angular/router';
-import { Webcams } from '../interface';
 
 @Component({
   selector: 'app-park-detail-page',
@@ -21,10 +20,14 @@ export class ParkDetailPageComponent implements OnInit {
       this.park = data;
       console.log(this.park.data);
     });
-    this.api.getWebcam().subscribe((data) => {
-      this.webcam = data;
-      console.log(this.webcam.data);
-    });
+});
+
+  this.route.params.subscribe((params) => {
+    this.parkCode = params['parkCode'];
+  this.api.getWebcam(this.parkCode).subscribe((data) => {
+    this.webcam = data;
+    console.log(this.webcam.data);
+  });
 });
 
   }

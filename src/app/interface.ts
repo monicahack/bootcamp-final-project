@@ -39,6 +39,8 @@ export interface Webcams {
     data:[{
         id:string;
         url:string;
-        parkCode: string;
+        relatedParks:[{
+            parkCode: string;
+        }]
     }]
 }
