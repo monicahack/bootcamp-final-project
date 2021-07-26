@@ -25,6 +25,7 @@ export interface Park {
         saturday:string;
         sunday:string;}] 
     }]
+    isFavorite: boolean;
 }
 
 export interface Activities {

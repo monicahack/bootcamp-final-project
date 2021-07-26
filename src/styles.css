@@ -24,6 +24,22 @@ button {
     width: 200px;
 }
 
+.favoriteItem {
+    width: auto;
+    border: none;
+    background-color: transparent;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.favColorSolid {
+    color: gray;
+}
+
+.favColorChange {
+    color: #354739;
+}
+
 nav{
     display: flex;
     justify-content: space-between;

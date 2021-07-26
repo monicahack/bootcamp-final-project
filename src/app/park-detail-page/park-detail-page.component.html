@@ -1,14 +1,15 @@
 <div class="parkDetail">
     <ng-container *ngIf="park.data.length">
     <div class="parkDetailItem" *ngFor="let parks of park.data, let i =index;">
-        <h2>{{parks.fullName}}</h2>
-        <h3>{{parks.addresses[0].city}}, {{parks.addresses[0].stateCode}}</h3>
+        <button class="favoriteItem" (click)="toggleFavorite(park)"><fa-icon [icon]="faTree" [ngClass]="park.isFavorite? 'favColorChange' : 'favColorSolid'"></fa-icon></button>
+        <h2 class="parkDetailName">{{parks.fullName}}</h2>
+        <h3 class ="parkDetailAddress">{{parks.addresses[0].city}}, {{parks.addresses[0].stateCode}}</h3>
         <img class="parkDetailImg" src="{{parks.images[0].url}}">
         <h3 *ngIf="parks.description">Description</h3>
-        <p>{{parks.description}}</p>
+        <p class="parkDetailDescription">{{parks.description}}</p>
         <h3 *ngIf="parks.activities.length">Activities</h3>
         <ul class="parkDetailActivities">
-            <li *ngFor="let activity of parks.activities | slice:0:20; let i =index;">{{parks.activities[i].name}}</li>
+            <li *ngFor="let activity of parks.activities | slice:0:30; let i =index;">{{parks.activities[i].name}}</li>
         </ul>
         <h3 *ngIf="parks.operatingHours[i].standardHours">Hours</h3>
         <ul class="parkDetailHours">
