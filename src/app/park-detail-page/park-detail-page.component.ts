@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NpsApiService } from '../nps-api.service';
 import { ActivatedRoute } from '@angular/router';
+import { FavoriteService } from '../favorite.service';
+import { faTree } from '@fortawesome/free-solid-svg-icons';
+import { Park } from '../interface';
 
 @Component({
   selector: 'app-park-detail-page',
@@ -10,9 +13,10 @@ import { ActivatedRoute } from '@angular/router';
 export class ParkDetailPageComponent implements OnInit {
   parkCode: string = '';
   park: any = {data:[]};
-  webcam: any = {data:[]};
+  webcam: any = {data:[]}; 
   url:string = '';
-  constructor(public api:NpsApiService, private route:ActivatedRoute) { }
+  faTree = faTree;
+  constructor(public api:NpsApiService, private route:ActivatedRoute, public favorite: FavoriteService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
@@ -28,8 +32,11 @@ export class ParkDetailPageComponent implements OnInit {
   this.api.getWebcam(this.parkCode).subscribe((data) => {
     this.webcam = data;
     console.log(this.webcam.data);
+    });
   });
-});
+}
 
+toggleFavorite(park: Park) {
+  this.favorite.toggleFavorite(park);
   }
 }

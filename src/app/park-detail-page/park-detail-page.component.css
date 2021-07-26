@@ -6,22 +6,47 @@
     margin: 20px;
 }
 
+h3.parkDetailAddress {
+    margin-top: -25px;
+}
+
+p.parkDetailDescription, ul.parkDetailActivities, ul.parkDetailHours {
+    margin-top: -15px;
+}
+
 img.parkDetailImg {
-    max-width: 400px;
+    max-width: 325px;
     border-radius: 10px;
 }
 
 ul.parkDetailActivities, ul.parkDetailHours {
     list-style: none;
+
 }
+
+ul.parkDetailActivities {
+    column-count: 2;
+    column-gap: 60px;
+}
+
 
 li {
     margin-left: -40px;
 }
 
+.favoriteItem {
+    position: absolute;
+    right: 25px;
+}
+
 @media only screen and (min-width: 768px) {
     img.parkDetailImg {
         max-width: 600px;
+    }
+
+    ul.parkDetailActivities {
+        column-count: 3;
+        column-gap: 40px;
     }
 }
 
