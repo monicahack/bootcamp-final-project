@@ -31,5 +31,11 @@ export class RandomParkGeneratorComponent implements OnInit {
       })
     })
   }
-}
+
+  toggleFavorite(park: Park) {
+    this.favorite.toggleFavorite(park);
+    }
+  }
+
+
 
