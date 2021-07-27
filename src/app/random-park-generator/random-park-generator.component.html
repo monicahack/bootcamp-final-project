@@ -1,1 +1,15 @@
-<h2>We think you'd really like...</h2>
+<h1>We think you'd really like...</h1>
+<div class="randomPark">
+    <!-- <button class="favoriteItem" (click)="toggleFavorite(park)"><fa-icon [icon]="faTree" [ngClass]="park.isFavorite? 'favColorChange' : 'favColorSolid'"></fa-icon></button> -->
+    <h2 class="randomParkName">{{park.data[this.randomNumber].fullName}}</h2>
+    <h2 class="randomState">{{park.data[this.randomNumber].states}}</h2>
+    <p class="randomDescription">{{park.data[this.randomNumber].description}}</p>
+    <img class="randomImg" src="{{park.data[this.randomNumber].images[0].url}}">
+    <h3 *ngIf="park.data[this.randomNumber].activities.length">Activities</h3>
+        <ul class="parkDetailActivities">
+            <li *ngFor="let activity of park.data[this.randomNumber].activities | slice:0:30; let i = index;">{{park.data[this.randomNumber].activities[i].name}}</li>
+        </ul>
+    <button [routerLink]="'/park-detail-page'">View More Details</button>
+    
+</div>
+
