@@ -33,5 +33,4 @@ export class NpsApiService {
     let webcamsURL = `${this.webcamURL}?parkCode=${parkCode}&api_key=${this.api_key}`;
     return this.client.get<Webcams>(webcamsURL);
   }
-
 }
