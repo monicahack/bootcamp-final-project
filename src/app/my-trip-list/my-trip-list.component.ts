@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NpsApiService } from '../nps-api.service';
-import { ActivatedRoute } from '@angular/router';
 import { FavoriteService } from '../favorite.service';
 import { faTree } from '@fortawesome/free-solid-svg-icons';
 import { Park } from '../interface';
@@ -11,10 +9,11 @@ import { Park } from '../interface';
   styleUrls: ['./my-trip-list.component.css']
 })
 export class MyTripListComponent implements OnInit {
-  park: Park [] = [];
+  park: any = {data:[]};
   favoriteList: Park[] = [];
   faTree = faTree;
-  constructor(public api:NpsApiService, private route:ActivatedRoute, public favorite: FavoriteService) { }
+
+  constructor(public favorite: FavoriteService) { }
 
   ngOnInit(): void {
     this.favoriteList=this.favorite.getFavorites();
