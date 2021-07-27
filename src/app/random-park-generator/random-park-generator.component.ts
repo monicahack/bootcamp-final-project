@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NpsApiService } from '../nps-api.service';
 import { Park } from '../interface';
+import { FavoriteService } from '../favorite.service';
+import { faTree } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -10,37 +12,24 @@ import { Park } from '../interface';
   styleUrls: ['./random-park-generator.component.css']
 })
 export class RandomParkGeneratorComponent implements OnInit {
+
   parkCode: string = '';
-  park: any = {};
+  park: any = {data:[]};
   data: Park[] = [];
   randomNumber = Math.floor((Math.random() * 467) + 1);
+  faTree = faTree;
 
-  constructor(public api:NpsApiService, private route:ActivatedRoute) { }
+  constructor(public api:NpsApiService, private route:ActivatedRoute, public favorite: FavoriteService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params)=>{
-      this.parkCode = params['parkCode'];
-      this.api.getParkDetails(this.parkCode).subscribe((data)=>{
+      this.parkCode = params['randomNumber'];
+      this.api.getParks().subscribe((data)=>{
         this.park = data;
-        console.log(this.park.data * this.randomNumber);
+        console.log(this.park.data[this.randomNumber].fullName);
+        
       })
     })
-  
-
-    
-    
   }
-  
-
 }
-  // this.route.params.subscribe(params) => {
-    //   this.parkCode = params['parkCode'];
-    // }
-    // this.route.params.subscribe((params) => {
-    //   console.log(this.park[this.randomNumber].parkCode);
-      // this.parkCode = params['parkCode'];
-      // this.api.getParkDetails(this.parkCode).subscribe((data) => {
-      // this.park = data;
-      // console.log(this.park.data);
-      // });
-    // });
+
