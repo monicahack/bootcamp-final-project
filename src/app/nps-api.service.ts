@@ -34,10 +34,10 @@ export class NpsApiService {
 
   }
 
-  getParkList() {
+/* not being used. old code when trying to paginate   getParkList() {
     let parksURL = `${this.parksURL}?limit=${this.parkLimit}&api_key=${this.api_key}`+ "&start=51";
     return this.client.get<ParkResponse>(parksURL);
-  }
+  } */
   
   getParkDetails(parkCode: string) {
     let detailURL = `${this.parkDetailURL}?parkCode=${parkCode}&api_key=${this.api_key}`;
