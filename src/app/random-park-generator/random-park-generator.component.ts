@@ -10,7 +10,7 @@ import { Park } from '../interface';
   styleUrls: ['./random-park-generator.component.css']
 })
 export class RandomParkGeneratorComponent implements OnInit {
-
+  parkCode: string = '';
   park: any = {};
   data: Park[] = [];
   randomNumber = Math.floor((Math.random() * 467) + 1);
@@ -18,16 +18,29 @@ export class RandomParkGeneratorComponent implements OnInit {
   constructor(public api:NpsApiService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log((Math.floor(Math.random()*this.data.length)));
-//     this.route.params.subscribe((params) => {
-//       this.parkCode = params['parkCode'];
-//     this.api.getParkDetails(this.parkCode).subscribe((data) => {
-//       this.park = data;
-//       console.log(this.park.data);
-//     });
-// });
+    this.route.params.subscribe((params)=>{
+      this.parkCode = params['parkCode'];
+      this.api.getParkDetails(this.parkCode).subscribe((data)=>{
+        this.park = data;
+        console.log(this.park.data * this.randomNumber);
+      })
+    })
+  
+
+    
     
   }
   
 
 }
+  // this.route.params.subscribe(params) => {
+    //   this.parkCode = params['parkCode'];
+    // }
+    // this.route.params.subscribe((params) => {
+    //   console.log(this.park[this.randomNumber].parkCode);
+      // this.parkCode = params['parkCode'];
+      // this.api.getParkDetails(this.parkCode).subscribe((data) => {
+      // this.park = data;
+      // console.log(this.park.data);
+      // });
+    // });
