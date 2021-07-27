@@ -49,3 +49,4 @@ export class NpsApiService {
     return this.client.get<ParkResponse>(parksURLbyState);
     // return parksURLbyState;
   }
+}
