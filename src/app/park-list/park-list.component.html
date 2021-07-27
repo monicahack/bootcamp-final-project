@@ -2,7 +2,7 @@
     <ul class="parkListItem" *ngFor="let parks of park.data, let i =index;">
     
         <!-- <a routerLink='/park-detail/{{parks.data[i].parkscode}}'><h3>{{parks.data[i].fullName}}</h3></a> -->
-    <img class="parkImage" src={{park.data[i].images[0].url}}/>
+    <li><img *ngIf="park.data[i].images[0]" class="parkImage" loading="lazy" src={{park.data[i].images[0].url}}/></li>
     <li>{{parks.fullName}}</li>
     </ul>
     

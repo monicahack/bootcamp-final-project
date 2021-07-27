@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ParkListComponent implements OnInit {
   parkCode: string = '';
-  
+  stateCode: string = '';
   park: any = {data:[]};
   constructor(public api:NpsApiService, private route:ActivatedRoute) { }
 
@@ -36,3 +36,11 @@ export class ParkListComponent implements OnInit {
     //   console.log(this.stateCode);
     // })
     
+    this.route.params.subscribe((params) => {
+      this.stateCode = params['stateCode'];
+    this.api.getParkList().subscribe((data) => {
+      this.park = data;
+      console.log(this.park.data);
+    });
+  });
+}}
