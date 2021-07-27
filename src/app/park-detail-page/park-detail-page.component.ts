@@ -23,6 +23,11 @@ export class ParkDetailPageComponent implements OnInit {
       this.parkCode = params['parkCode'];
     this.api.getParkDetails(this.parkCode).subscribe((data) => {
       this.park = data;
+      let faves = this.favorite.getFavorites();
+      let favorite = faves.find((item => item.parkCode === this.park.parkCode));
+      if (favorite) {
+        this.park.isFavorite = true;
+      }
       console.log(this.park.data);
     });
 });
