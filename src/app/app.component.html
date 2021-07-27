@@ -1,12 +1,11 @@
 <nav>
     <div class="leftLogoArea">
         <!-- NEED A LOGO IMAGE -->
-        <a routerLink='/' routerLinkActive='active'><img class="logo" scr="">LOGO</a>
+        <a class="logoPlaceholder"routerLink='/' routerLinkActive='active'><img class="logo" scr="">LOGO</a>
         <h2>Subheadline?</h2>
     </div>
     <ul>
-        <!-- NEED TREE ICON -->
-        <li><a routerLink='/my-trip-list' routerLinkActive='active'>Tree Icon Goes Here</a></li>
+        <li class="treeIcon"[routerLink]="'/my-trip-list/'"><fa-icon [icon]="faTree" ></fa-icon></li>
     </ul>
 </nav>
 <router-outlet></router-outlet>
