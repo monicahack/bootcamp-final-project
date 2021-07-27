@@ -34,10 +34,10 @@ export class ParkListComponent implements OnInit {
     //   // this.stateCode = params.stateCode;
     //   console.log(this.stateCode);
     // })
-    
+    //this needs to communicate with the NPS API service
     this.route.params.subscribe((params) => {
       this.stateCode = params['stateCode'];
-    this.api.getParkList().subscribe((data) => {
+    this.api.getParks().subscribe((data) => {
       this.park = data;
       console.log(this.park.data);
     });
