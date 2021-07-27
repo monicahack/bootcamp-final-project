@@ -45,3 +45,16 @@ export interface Webcams {
         }]
     }]
 }
+
+export interface ThingsToDo {
+    data:[[{
+        seasonDescription:string;
+        url:string;
+        images:[{
+            crops:[{
+                url:string;
+            }]
+        season:string[];    
+        }]
+    }]]
+}
