@@ -14,7 +14,7 @@ export class ParkListComponent implements OnInit {
   constructor(public api:NpsApiService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.api.getParks().subscribe((data) => {
+    this.api.getParkList().subscribe((data) => {
       this.park = data;
       console.log(this.park.data);
     });

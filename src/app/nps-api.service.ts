@@ -21,6 +21,7 @@ export class NpsApiService {
   limit = '467';
   states: StateListing[] = [];
   index = 0 + this.states.length;
+  parkLimit = '50';
   // stateInitial = this.states[this.index].stateCode;
   // stateInitial = '';
 
@@ -33,6 +34,11 @@ export class NpsApiService {
 
   }
 
+  getParkList() {
+    let parksURL = `${this.parksURL}?limit=${this.parkLimit}&api_key=${this.api_key}`+ "&start=51";
+    return this.client.get<ParkResponse>(parksURL);
+  }
+  
   getParkDetails(parkCode: string) {
     let detailURL = `${this.parkDetailURL}?parkCode=${parkCode}&api_key=${this.api_key}`;
     return this.client.get<Park>(detailURL);
