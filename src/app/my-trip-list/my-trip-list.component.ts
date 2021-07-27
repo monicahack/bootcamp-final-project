@@ -9,7 +9,8 @@ import { Park } from '../interface';
   styleUrls: ['./my-trip-list.component.css']
 })
 export class MyTripListComponent implements OnInit {
-  park: any = {data:[]};
+  // park: any = {data:[]};
+  park: Park [] = [];
   favoriteList: Park[] = [];
   faTree = faTree;
 
@@ -17,6 +18,7 @@ export class MyTripListComponent implements OnInit {
 
   ngOnInit(): void {
     this.favoriteList=this.favorite.getFavorites();
+    console.log(this.favorite.favoriteList);
 }
 
 toggleFavorite(park: Park) {

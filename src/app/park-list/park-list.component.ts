@@ -15,7 +15,6 @@ export class ParkListComponent implements OnInit {
   constructor(public api:NpsApiService, private route:ActivatedRoute) { }
 
   queryParam: string = '';
-  stateCode: string = '';
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params=>{
@@ -27,8 +26,8 @@ export class ParkListComponent implements OnInit {
     //   this.park = data;
     //   console.log(this.park.data);
     // });
-    })
-  }}
+    });
+
 // this.route.params.subscribe((params)=>{
     //   this.stateCode = params['stateCode'];
     //   console.log(params);
@@ -44,3 +43,4 @@ export class ParkListComponent implements OnInit {
     });
   });
 }}
+
