@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ParkResponse, Park, Webcams } from './interface';
+import { StatesListComponent, StateListing } from './states-list/states-list.component';
+import { ActivatedRoute } from '@angular/router';
+
 
 
 @Injectable({
@@ -16,12 +19,18 @@ export class NpsApiService {
   webcamURL = 'https://developer.nps.gov/api/v1/webcams'
   api_key = 'BazAUNaZgkG8JZqeWIj3HTckfHrQsIfrRy2B2daq';
   limit = '467';
+  states: StateListing[] = [];
+  index = 0 + this.states.length;
+  // stateInitial = this.states[this.index].stateCode;
+  // stateInitial = '';
+
   
-  constructor(public client: HttpClient) { }
+  constructor(public client: HttpClient, private route:ActivatedRoute) { }
   
   getParks() {
     let parksURL = `${this.parksURL}?limit=${this.limit}&api_key=${this.api_key}`;
     return this.client.get<ParkResponse>(parksURL);
+
   }
 
   getParkDetails(parkCode: string) {
@@ -32,6 +41,13 @@ export class NpsApiService {
   getWebcam(parkCode: string) {
     let webcamsURL = `${this.webcamURL}?parkCode=${parkCode}&api_key=${this.api_key}`;
     return this.client.get<Webcams>(webcamsURL);
+  }
+
+  getParksByState(stateCode: any) {
+    let stateInitial = this.states[this.index].stateCode;
+    let parksURLbyState = `${this.parksURL}?stateCode=${stateInitial}&limit=${this.limit}&api_key=${this.api_key}`;
+    return this.client.get<ParkResponse>(parksURLbyState);
+    // return parksURLbyState;
   }
 
 }

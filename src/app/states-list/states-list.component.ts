@@ -226,7 +226,10 @@ export class StatesListComponent implements OnInit {
     }
   ];
 
-  // states: string = '';
+  // stateName: string;
+  state: StateListing[] = [];
+  // stateCode: any = {stateCode};
+  index = 0 + this.states.length;
   park: any = {};
   data: Park[] = [];
   constructor(public api:NpsApiService, private route:ActivatedRoute) { }
@@ -239,5 +242,13 @@ export class StatesListComponent implements OnInit {
   //     console.log(this.park);
   //   });
   // });
+  }
+
+  getStateCode(index: number) {
+    // console.log('button works')
+    console.log(this.states[index].stateCode);
+    // console.log(getParksByState(this.states[index].stateCode));
+    // return this.api.getParksByState(this.states[index].stateCode);
+    // this.route.navigate(['/park-list'], { queryParams: { stateCode: 'this.states[this.index].stateCode' } });
   }
 }
