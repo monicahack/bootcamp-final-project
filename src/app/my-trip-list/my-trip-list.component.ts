@@ -9,15 +9,15 @@ import { Park } from '../interface';
   styleUrls: ['./my-trip-list.component.css']
 })
 export class MyTripListComponent implements OnInit {
-  park: any = {data:[]};
+  park: Park [] = [];
   favoriteList: Park[] = [];
   faTree = faTree;
-
+  
   constructor(public favorite: FavoriteService) { }
 
   ngOnInit(): void {
     this.favoriteList=this.favorite.getFavorites();
-    console.log(this.favorite.favoriteList);
+    console.log(this.favoriteList);
 }
 
 toggleFavorite(park: Park) {
