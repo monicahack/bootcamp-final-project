@@ -1,9 +1,15 @@
 <div class="parkList">
-    <ul class="parkListItem" *ngFor="let parks of park.data, let i =index;">
-    
-        <!-- <a routerLink='/park-detail/{{parks.data[i].parkscode}}'><h3>{{parks.data[i].fullName}}</h3></a> -->
-    <li><img *ngIf="park.data[i].images[0].url" class="parkImage" loading="lazy" src={{park.data[i].images[0].url}} onerror="this.src='/assets/mountain-view.png';"/></li>
-    <li>{{parks.fullName}}</li>
-    </ul>
-    
+  <ul class="parkListItem" *ngFor="let parks of filteredByState; let i = index">
+    <!-- <a routerLink='/park-detail/{{parks.data[i].parkscode}}'><h3>{{parks.data[i].fullName}}</h3></a> -->
+    <li>
+      <img
+        *ngIf="park[i].images[0].url"
+        class="parkImage"
+        loading="lazy"
+        src="{{ park[i].images[0].url }}"
+        onerror="this.src='/assets/mountain-view.png';"
+      />
+    </li>
+    <li>{{ parks.fullName }}</li>
+  </ul>
 </div>
