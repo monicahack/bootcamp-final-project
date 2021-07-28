@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NpsApiService } from '../nps-api.service';
 import { Park } from '../interface';
 import { ActivatedRoute } from '@angular/router';
+import { FavoriteService } from '../favorite.service';
+
 
 @Component({
   selector: 'app-park-list',
@@ -13,7 +15,7 @@ export class ParkListComponent implements OnInit {
   stateCode: string = '';
   park: any = { data: [] };
   filteredByState: any;
-  constructor(public api: NpsApiService, private route: ActivatedRoute) {}
+  constructor(public api: NpsApiService, private route: ActivatedRoute, public favorite: FavoriteService) {}
 
   queryParam: string = '';
 
@@ -25,7 +27,17 @@ export class ParkListComponent implements OnInit {
         console.log(this.filteredByState);
       });
       this.api.getParks().subscribe((data) => {
-        this.park = data.data;
+        // this.park = data.data;
+        this.park = data;
+        let favoriteList = this.favorite.getFavorites();
+        console.log(favoriteList);
+        this.park.forEach((item:any) => {
+          let favoritePark = favoriteList.find((fav) => fav.parkCode === item.parkCode);
+          item.isFavorite = false;
+          if (favoritePark) {
+            item.isFavorite = true;
+          }
+        });
       });
       console.log(this.park);
     });
