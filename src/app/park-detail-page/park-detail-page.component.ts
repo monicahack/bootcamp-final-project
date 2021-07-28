@@ -16,6 +16,8 @@ export class ParkDetailPageComponent implements OnInit {
   webcam: any = {data:[]}; 
   url:string = '';
   faTree = faTree;
+  favoriteList: Park[] = [];
+
   constructor(public api:NpsApiService, private route:ActivatedRoute, public favorite: FavoriteService) { }
 
   ngOnInit(): void {
@@ -24,8 +26,8 @@ export class ParkDetailPageComponent implements OnInit {
     this.api.getParkDetails(this.parkCode).subscribe((data) => {
       this.park = data;
       let faves = this.favorite.getFavorites();
-      let favorite = faves.find((item => item.parkCode === this.park.parkCode));
-      if (favorite) {
+      let favoritePark = faves.find((item => item.parkCode === this.park.parkCode));
+      if (favoritePark) {
         this.park.isFavorite = true;
       }
       console.log(this.park.data);

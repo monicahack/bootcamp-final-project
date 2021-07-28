@@ -17,7 +17,7 @@
             <ul class="randomActivities">
                 <li *ngFor="let activity of park.data[this.randomNumber].activities | slice:0:30; let i = index;">{{park.data[this.randomNumber].activities[i].name}}</li>
             </ul>
-        <button class="moreDetails"[routerLink]="'/park-detail-page'">View More Details</button>
+        <button class="moreDetails"><a routerLink='/park-detail/{{park.data[this.randomNumber].parkCode}}'>View More Details</a></button>
     
     </div>
 
