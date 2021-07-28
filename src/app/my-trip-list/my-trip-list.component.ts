@@ -9,8 +9,7 @@ import { Park } from '../interface';
   styleUrls: ['./my-trip-list.component.css']
 })
 export class MyTripListComponent implements OnInit {
-  // park: any = {data:[]};
-  park: Park [] = [];
+  park: any = {data:[]};
   favoriteList: Park[] = [];
   faTree = faTree;
 

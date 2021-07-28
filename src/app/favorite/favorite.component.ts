@@ -9,7 +9,7 @@ import { Park } from '../interface';
 })
 
 export class FavoriteComponent implements OnInit {
-  park: Park [] = [];
+  park: any = {data:[]};
 
   constructor(public favorite: FavoriteService) { }
 
