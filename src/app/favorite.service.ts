@@ -9,7 +9,7 @@ export class FavoriteService {
   parkCode: string = '';
   isFavorite!: boolean;
   favoriteList: Park[] = [];
-  park: any = {data:[]};
+  // park: any = {data:[]};
 
   constructor(public client: HttpClient) { }
 
