@@ -25,8 +25,8 @@ export class ParkDetailPageComponent implements OnInit {
       this.parkCode = params['parkCode'];
     this.api.getParkDetails(this.parkCode).subscribe((data) => {
       this.park = data;
-      let faves = this.favorite.getFavorites();
-      let favoritePark = faves.find((item => item.parkCode === this.park.parkCode));
+      let favoriteList = this.favorite.getFavorites();
+      let favoritePark = favoriteList.find((item => item.parkCode === this.park.parkCode));
       if (favoritePark) {
         this.park.isFavorite = true;
       }
