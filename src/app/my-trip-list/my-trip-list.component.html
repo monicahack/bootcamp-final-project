@@ -3,7 +3,7 @@
     <div class="tripList" *ngFor="let park of favoriteList, let i =index;">
         <!-- <h2 class="parkName">{{park.fullName}}</h2> -->
         <div class="parkName">
-            <!-- <a routerLink='/park-detail/{{park.parkCode}}'><h3>{{park.fullName}}</h3></a> -->
+            <a routerLink='/park-detail/{{park.parkCode}}'><h3>{{park.fullName}}</h3></a>
             <p>{{park.fullName}}</p>
 
             <button class="favoriteItem" (click)="toggleFavorite(park)"><fa-icon [icon]="faTree" [ngClass]="park.isFavorite? 'favColorChange' : 'favColorSolid'"></fa-icon></button>
