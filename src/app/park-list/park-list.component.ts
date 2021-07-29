@@ -15,8 +15,7 @@ export class ParkListComponent implements OnInit {
   stateCode: string = '';
   park: Park[] = [];
   faTree = faTree;
-  favoriteList: Park[] = [];
-
+  
   constructor(public api: NpsApiService, private route: ActivatedRoute, public favorite: FavoriteService) {}
 
   queryParam: string = '';
@@ -26,9 +25,6 @@ export class ParkListComponent implements OnInit {
       this.stateCode = params['stateCode'];
       this.api.getParks(this.stateCode).subscribe((data) => {
         this.park = data.data;
-        
-        let favoriteList = this.favorite.getFavorites();
-        console.log(favoriteList)
         this.park.forEach((item: Park) => {
           item.isFavorite = this.favorite.isFavorited(item);
           // line 33 Setting item that is favorited to what it returns
