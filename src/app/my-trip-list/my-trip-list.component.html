@@ -1,12 +1,8 @@
-<div class="tripListContainer">
-    <h2 class="tripList">My Trip List</h2>
-    <div class="tripList" *ngFor="let park of favoriteList, let i =index;">
-        <!-- <h2 class="parkName">{{park.fullName}}</h2> -->
-        <div class="parkName">
-            <!-- <a routerLink='/park-detail/{{park.parkCode}}'><h3>{{park.fullName}}</h3></a> -->
-            <p>{{park.fullName}}</p>
-
-            <button class="favoriteItem" (click)="toggleFavorite(park)"><fa-icon [icon]="faTree" [ngClass]="park.isFavorite? 'favColorChange' : 'favColorSolid'"></fa-icon></button>
-        </div>
-        </div>
+<h2 class="tripList">My Trip List</h2>
+<div class="favoriteList" *ngFor="let park of favoriteList, let i =index;">
+    <div class="tripListContainer" >
+            <img class="parkFavoriteImg" src="{{park.images[0].url}}">
+        <a routerLink='/park-detail/{{park.parkCode}}'><h3>{{park.fullName}}</h3></a>
+        <button class="favoriteItem" (click)="toggleFavorite(park)"><fa-icon [icon]="faTree" [ngClass]="park.isFavorite? 'favColorChange' : 'favColorSolid'"></fa-icon></button>
+    </div>
 </div>
