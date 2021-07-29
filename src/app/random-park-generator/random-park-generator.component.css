@@ -1,40 +1,77 @@
 h1{
     color: #CC9C4E;
     border-radius: 30px;
-    padding: 8px 50px 8px 50px;
+    /* padding: 8px 50px 8px 50px; */
     text-align: center;
     font-size: 42px;
+    line-height: 54px;
+    margin-bottom: 10px;
     
 }
 
 h3{
-    margin-top: 20px;
+    margin: 20px 0px 10px 0px;
+}
+
+h2.randomParkName{
+    max-width: 300px;
+    font-size: 23px;
+    line-height: 25px;
+    margin-bottom: -10px;
+}
+
+.parkDetailAddress {
+    font-weight: normal;
+    margin: 16px 0px 8px 0px;
+    color: grey;
+    font-size: 18px;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .randomParkCard{
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
-    padding: 8px;
+    /* padding: 8px; */
     margin: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.randomPark{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    margin: 20px;
-}
-h2.randomParkName{
-    max-width: 300px;
-    line-height: 25px;
-}
 
 img.randomImg{
-    max-width: 100%;
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    width: 100%;
+    max-height: 370px;
+    object-fit:cover;
+    border-radius: 10px 10px 0px 0px;
+    /* margin-top: 10px; */
+    margin-bottom: -20px;
+}
+
+.parkCardHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.favoriteItem {
+    margin-top: 5px;
+    padding-right: 2px;
+    /* left: 325px; */
+}
+
+.randomParkContent {
+    /* display: flex;
+    flex-direction: column; */
+    padding: 16px;
+}
+
+.randomDescription {
+    margin-bottom: 36px;
 }
 
 ul.randomActivities{
@@ -47,25 +84,16 @@ li{
     margin-left: -40px;
 }
 
-button.moreDetails{
-    margin-top: 30px;
-}
-
-.favoriteItem {
-    left: 325px;
-}
-
-.content{
+/* .randomPark{
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    align-items: center;
-}
-
-.parkCardHeader{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    align-content: center;
+    margin: 20px;
+} */
+button.moreDetails{
+    width: 100%;
+    margin: 30px 0px 10px 0px;
 }
 
 #loading{
@@ -95,9 +123,9 @@ button.moreDetails{
         max-width: 800px;
     }
 
-    img.randomImg{
+    /* img.randomImg{
         max-width: 725px;
-    }
+    } */
 
     ul.randomActivities{
         column-count: 3;
@@ -112,9 +140,9 @@ button.moreDetails{
 }
 
 @media only screen and (min-width: 1024px){
-    img.randomImg{
+    /* img.randomImg{
         max-width: 850px;
-    }
+    } */
 
     .favoriteItem {
         left: 850px;
