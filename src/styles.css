@@ -1,6 +1,5 @@
 *{
     font-family: 'Poppins', sans-serif;
-    /* margin: 0px; */
 }
 
 body{
@@ -78,6 +77,8 @@ button {
 .leftLogoArea{
     margin-left: 20px;
 }
+
+
 
 
 @media only screen and (min-width: 768px) {
