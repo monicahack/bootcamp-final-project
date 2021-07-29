@@ -1,7 +1,11 @@
-button{
+/* button{
     font-family: 'Poppins', sans-serif;
     height: 40px; 
-}
+    this was making the text 
+    on the buttons on the landing page 
+    not centered vertically since button 
+    styling already exists on styles.css
+} */
 
 .buttonSurprise{
     background-color: #94C9A9;
