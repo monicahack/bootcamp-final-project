@@ -4,6 +4,7 @@
         <button class="favoriteItem" (click)="toggleFavorite(parks)"><fa-icon [icon]="faTree" [ngClass]="parks.isFavorite? 'favColorChange' : 'favColorSolid'"></fa-icon></button>
         <h2 class="parkDetailName">{{parks.fullName}}</h2>
         <h3 class ="parkDetailAddress">{{parks.addresses[0].city}}, {{parks.addresses[0].stateCode}}</h3>
+        <p class = "parkDetailDesignation">{{parks.designation}}</p>
         <img class="parkDetailImg" src="{{parks.images[0].url}}">
         <h3 *ngIf="parks.description">Description</h3>
         <p class="parkDetailDescription">{{parks.description}}</p>

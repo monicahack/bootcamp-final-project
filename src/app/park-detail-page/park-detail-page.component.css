@@ -15,6 +15,12 @@ h3.parkDetailAddress {
     margin-top: -20px;
 }
 
+p.parkDetailDesignation {
+    color:#cc9a4b;
+    margin-top: -15px;
+    font-weight: 500;
+}
+
 p.parkDetailDescription, ul.parkDetailActivities, ul.parkDetailHours {
     margin-top: -15px;
 }
