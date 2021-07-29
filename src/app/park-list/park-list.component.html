@@ -1,5 +1,5 @@
 <div class="parkList">
-  <ul class="parkListItem" *ngFor="let parks of filteredByState; let i = index">
+  <ul class="parkListItem" *ngFor="let parks of park; let i = index">
     <!-- <a routerLink='/park-detail/{{parks.data[i].parkscode}}'><h3>{{parks.data[i].fullName}}</h3></a> -->
     <li>
       <img
@@ -10,6 +10,7 @@
         onerror="this.src='/assets/mountain-view.png';"
       />
     </li>
+    <button class="favoriteItem" (click)="toggleFavorite(parks)"><fa-icon [icon]="faTree" [ngClass]="parks.isFavorite? 'favColorChange' : 'favColorSolid'"></fa-icon></button>
     <li>{{ parks.fullName }}</li>
-  </ul>
+    </ul>
 </div>

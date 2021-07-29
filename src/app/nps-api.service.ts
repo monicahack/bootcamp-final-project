@@ -26,23 +26,20 @@ export class NpsApiService {
   limit = '467';
   states: StateListing[] = [];
   index = 0 + this.states.length;
-  parkLimit = '50';
-  // stateInitial = this.states[this.index].stateCode;
-  // stateInitial = '';
+ 
+
 
   state: string = '';
 
   constructor(public client: HttpClient, private route: ActivatedRoute) {}
 
-  getParks() {
+  getParks(state?: string) {
     let parksURL = `${this.parksURL}?limit=${this.limit}&api_key=${this.api_key}`;
+    if (state) {
+      parksURL+= `&stateCode=${state}`
+    }
     return this.client.get<ParkResponse>(parksURL);
   }
-
-  /* not being used. old code when trying to paginate   getParkList() {
-    let parksURL = `${this.parksURL}?limit=${this.parkLimit}&api_key=${this.api_key}`+ "&start=51";
-    return this.client.get<ParkResponse>(parksURL);
-  } */
 
   getParkDetails(parkCode: string) {
     let detailURL = `${this.parkDetailURL}?parkCode=${parkCode}&api_key=${this.api_key}`;
@@ -54,13 +51,5 @@ export class NpsApiService {
     return this.client.get<Webcams>(webcamsURL);
   }
 
-  getParksByState(state: any) {
-    // let stateInitial = this.states[this.index].stateCode;
-    // let parksURLbyState = `${this.parksURL}?stateCode=${stateInitial}&limit=${this.limit}&api_key=${this.api_key}`;
-    // return this.client.get<ParkResponse>(parksURLbyState);
-    // return parksURLbyState;
-    return this.client.get(
-      `https://developer.nps.gov/api/v1/parks?stateCode=${state}&api_key=${this.api_key}`
-    );
-  }
+
 }

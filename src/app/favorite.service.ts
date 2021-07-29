@@ -30,6 +30,12 @@ toggleFavorite(park: Park) {
 getFavorites() {
   return this.favoriteList;
 }
+isFavorited(park: Park){
+  let favorite = this.favoriteList.find((fav) => fav.parkCode === park.parkCode);
+  //!! is returning a boolean representation if it is found. if found is an object. opposite of object is false. essentially returning if found
+  //isFavorited returns true or false. 
+  return !!favorite;
+}
 
 onClick() {
   this.isFavorite = !this.isFavorite;
