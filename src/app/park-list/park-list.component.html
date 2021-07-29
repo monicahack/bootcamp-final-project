@@ -1,17 +1,22 @@
-<h3 *ngIf="stateName"> Parks in {{stateName}} </h3>
-<div class="parkList">
-  <ul class="parkListItem" *ngFor="let parks of park; let i = index">
-    <!-- <a routerLink='/park-detail/{{parks.data[i].parkscode}}'><h3>{{parks.data[i].fullName}}</h3></a> -->
-    <li>
-      <img
-        *ngIf="parks.images[0].url"
-        class="parkImage"
-        loading="lazy"
-        src="{{ parks.images[0].url }}"
-        onerror="this.src='/assets/mountain-view.png';"
-      />
-    </li>
-    <button class="favoriteItem" (click)="toggleFavorite(parks)"><fa-icon [icon]="faTree" [ngClass]="parks.isFavorite? 'favColorChange' : 'favColorSolid'"></fa-icon></button>
-    <li>{{ parks.fullName }}</li>
-    </ul>
+<div class="pageContent">
+  <h2 *ngIf="stateName"> Parks in {{stateName}} </h2>
+    <div class="parkList">
+      <div class="parkListItem" *ngFor="let parks of park; let i = index">
+            <img
+            *ngIf="parks.images[0].url"
+            class="parkImage"
+            loading="lazy"
+            src="{{ parks.images[0].url }}"
+            onerror="this.src='/assets/mountain-view.png';"
+            />
+           <div class="cardContent">
+              <!-- <a routerLink='/park-detail/{{parks.data[i].parkscode}}'><h3>{{ parks.fullName }}</h3></a> -->
+              <h3>{{ parks.fullName }}</h3>
+              <button class="favoriteItem" (click)="toggleFavorite(parks)"><fa-icon [icon]="faTree" [ngClass]="parks.isFavorite? 'favColorChange' : 'favColorSolid'"></fa-icon></button>
+           </div>
+      </div>
+    </div>
 </div>
+
+
+
