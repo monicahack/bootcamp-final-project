@@ -1,26 +1,26 @@
 <div class="content">
     <h1>We think you'd really like...</h1>
-<div class="randomParkCard">
+        <div class="randomParkCard">
     
-    <div class="randomPark">
-        <div class="parkCardHeader">
-            <div class="parkTitleArea">
-                <h2 class="randomParkName">{{park.data[this.randomNumber].fullName}}</h2>
-                <h3 class ="parkDetailAddress">{{park.data[this.randomNumber].addresses[0].city}}, {{park.data[this.randomNumber].addresses[0].stateCode}}</h3>
+            <div class="randomPark">
+                <div class="parkCardHeader">
+                    <div class="parkTitleArea">
+                        <h2 class="randomParkName">{{park.data[this.randomNumber].fullName}}</h2>
+                        <h3 class ="parkDetailAddress">{{park.data[this.randomNumber].addresses[0].city}}, {{park.data[this.randomNumber].addresses[0].stateCode}}</h3>
+                    </div>
+                    <button class="favoriteItem" (click)="toggleFavorite(park.data[this.randomNumber])"><fa-icon [icon]="faTree" [ngClass]="park.data[this.randomNumber].isFavorite? 'favColorChange' : 'favColorSolid'"></fa-icon></button>
+                </div> 
+                <img class="randomImg" src="{{park.data[this.randomNumber].images[0].url}}">
+                <h3>Description</h3>
+                <p class="randomDescription">{{park.data[this.randomNumber].description}}</p>
+                <h3 *ngIf="park.data[this.randomNumber].activities.length">Activities</h3>
+                <ul class="randomActivities">
+                    <li *ngFor="let activity of park.data[this.randomNumber].activities | slice:0:30; let i = index;">{{park.data[this.randomNumber].activities[i].name}}</li>
+                </ul>
+                <button class="moreDetails"><a routerLink='/park-detail/{{park.data[this.randomNumber].parkCode}}'>View More Details</a></button>
+    
             </div>
-            <button class="favoriteItem" (click)="toggleFavorite(park)"><fa-icon [icon]="faTree" [ngClass]="park.isFavorite? 'favColorChange' : 'favColorSolid'"></fa-icon></button>
-        </div> 
-        <img class="randomImg" src="{{park.data[this.randomNumber].images[0].url}}">
-        <h3>Description</h3>
-        <p class="randomDescription">{{park.data[this.randomNumber].description}}</p>
-        <h3 *ngIf="park.data[this.randomNumber].activities.length">Activities</h3>
-            <ul class="randomActivities">
-                <li *ngFor="let activity of park.data[this.randomNumber].activities | slice:0:30; let i = index;">{{park.data[this.randomNumber].activities[i].name}}</li>
-            </ul>
-        <button class="moreDetails"><a routerLink='/park-detail/{{park.data[this.randomNumber].parkCode}}'>View More Details</a></button>
-    
-    </div>
 
-</div>
+        </div>
 </div>
 
