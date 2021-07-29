@@ -1,3 +1,28 @@
-h2{
-    margin-left: 25px;
+.tripList {
+    margin: 20px;
+}
+
+.tripListContainer {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 8x;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+h2.parkFavoriteName {
+    max-width: 300px;
+    line-height: 25px;
+}
+
+img.parkFavoriteImg {
+    max-width: 150px;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.favoriteItem {
+    float: right;
 }
