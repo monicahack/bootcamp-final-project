@@ -18,6 +18,7 @@ export class RandomParkGeneratorComponent implements OnInit {
   data: Park[] = [];
   randomNumber = Math.floor((Math.random() * 467) + 1);
   faTree = faTree;
+  favoriteList: Park[] = [];
 
   constructor(public api:NpsApiService, private route:ActivatedRoute, public favorite: FavoriteService) { }
 
@@ -27,6 +28,11 @@ export class RandomParkGeneratorComponent implements OnInit {
       this.api.getParks().subscribe((data)=>{
         this.park = data;
         console.log(this.park.data[this.randomNumber].fullName);
+        let favoriteList = this.favorite.getFavorites();
+      let favoritePark = favoriteList.find((item => item.parkCode === this.park.parkCode));
+      if (favoritePark) {
+        this.park.isFavorite = true;
+      }
         
       })
     })
