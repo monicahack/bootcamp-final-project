@@ -15,11 +15,19 @@ h3.parkDetailAddress {
     margin-top: -20px;
 }
 
-p.parkDetailDesignation {
-    color:#cc9a4b;
-    margin-top: -15px;
-    font-weight: 500;
-}
+.parkDetailDesignation {
+    margin-bottom: 10px;
+    display: block;
+    margin-top: -10px;
+    font-weight: 400;
+    background: #cc9a4b;
+    color: white;
+    font-size: 14px;
+    width: fit-content;
+    border-radius: 6px;
+    padding-left: 6px;
+    padding-right: 6px;
+} 
 
 p.parkDetailDescription, ul.parkDetailActivities, ul.parkDetailHours {
     margin-top: -15px;
@@ -28,6 +36,7 @@ p.parkDetailDescription, ul.parkDetailActivities, ul.parkDetailHours {
 img.parkDetailImg {
     max-width: 325px;
     border-radius: 10px;
+    margin-top: 5px;
 }
 
 ul.parkDetailActivities, ul.parkDetailHours {
