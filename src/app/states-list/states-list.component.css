@@ -1,8 +1,53 @@
+/* * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  } */
+
+body{ margin: 20px}
+
+.statesButtonArea {
+    padding: 0;
+    margin: 20px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .statesListing {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 74px;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    padding: 10px 20px;
+    margin-bottom: 16px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+@media only screen and (min-width: 768px) {
+.statesButtonArea {
+    padding: 0;
+    margin: 6px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.statesListing {
+    display: flex;
+    flex: 1 1 auto;
+    width: 40vw;
+    margin: 10px;
+}
+
+}
+
+
+@media only screen and (min-width: 1024px) {
+    .statesListing {
+        width: 30vw;
+    }
+
 }
