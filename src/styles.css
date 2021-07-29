@@ -3,6 +3,10 @@
     /* margin: 0px; */
 }
 
+body{
+    margin: 0px;
+}
+
 p, h1, h2, h3, h4 {
     max-width: 400px;
 }
@@ -54,10 +58,8 @@ button {
     color: #354739;
 }
 
-nav.navigationContent{
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-bottom: 10px;
+.navigationContent{
+    margin: 0px;
     height: 150px;
     display: flex;
     justify-content: space-between;
@@ -67,8 +69,10 @@ nav.navigationContent{
     position: sticky;
     top: 0px;
     z-index: 1;
-    box-shadow: 0 2px 2px -2px rgba(0,0,0,.3);
+    /* box-shadow: 0 2px 2px -2px rgba(0,0,0,.3); */
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16);
 }
+
 
 
 .leftLogoArea{
