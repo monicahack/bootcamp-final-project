@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NpsApiService } from '../nps-api.service';
 import { Park } from '../interface';
 import { ActivatedRoute } from '@angular/router';
+import { FavoriteService } from '../favorite.service';
+import { faTree } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-park-list',
@@ -11,26 +13,27 @@ import { ActivatedRoute } from '@angular/router';
 export class ParkListComponent implements OnInit {
   parkCode: string = '';
   stateCode: string = '';
-  park: any = { data: [] };
-  filteredByState: any;
-  constructor(public api: NpsApiService, private route: ActivatedRoute) {}
+  park: Park[] = [];
+  faTree = faTree;
+  
+  constructor(public api: NpsApiService, private route: ActivatedRoute, public favorite: FavoriteService) {}
 
   queryParam: string = '';
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
       this.stateCode = params['stateCode'];
-      this.api.getParksByState(this.stateCode).subscribe((states: any) => {
-        this.setFilteredStates(states.data);
-        console.log(this.filteredByState);
-      });
-      this.api.getParks().subscribe((data) => {
+      this.api.getParks(this.stateCode).subscribe((data) => {
         this.park = data.data;
-      });
-      console.log(this.park);
-    });
+        this.park.forEach((item: Park) => {
+          item.isFavorite = this.favorite.isFavorited(item);
+          // line 33 Setting item that is favorited to what it returns
+          })
+      })
+        });
   }
-  setFilteredStates(stateArray: any[]) {
-    this.filteredByState = stateArray;
-  }
+ 
+  toggleFavorite(park: Park) {
+    this.favorite.toggleFavorite(park);
+    }
 }
