@@ -23,10 +23,10 @@ export class RandomParkGeneratorComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params)=>{
-      this.parkCode = params['randomNumber'];
+      // this.parkCode = params['randomNumber'];
       this.api.getParks().subscribe((data)=>{
         this.park = data;
-        console.log(this.park.data[this.randomNumber].fullName);
+        // console.log(this.park.data[this.randomNumber].fullName);
         this.park.forEach((item: Park) => {
           item.isFavorite = this.favorite.isFavorited(item);
         })
