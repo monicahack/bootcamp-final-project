@@ -40,3 +40,4 @@ import { FavoriteComponent } from './favorite/favorite.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+//this file was created automatically-components, services- and we added in Font Awesome and HttpClientModule

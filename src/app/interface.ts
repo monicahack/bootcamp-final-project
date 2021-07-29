@@ -26,6 +26,7 @@ export interface Park {
         sunday:string;}] 
     }]
     isFavorite: boolean;
+    //isFavorite was created by us, and put in so we could saves to a new array so we can access the data
 }
 
 export interface Activities {
