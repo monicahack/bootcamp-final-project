@@ -16,7 +16,6 @@ export class ParkDetailPageComponent implements OnInit {
   webcam: any = {data:[]}; 
   url:string = '';
   faTree = faTree;
-  favoriteList: Park[] = [];
 
   constructor(public api:NpsApiService, private route:ActivatedRoute, public favorite: FavoriteService) { }
 
@@ -25,11 +24,9 @@ export class ParkDetailPageComponent implements OnInit {
       this.parkCode = params['parkCode'];
     this.api.getParkDetails(this.parkCode).subscribe((data) => {
       this.park = data;
-      let favoriteList = this.favorite.getFavorites();
-      let favoritePark = favoriteList.find((item => item.parkCode === this.park.parkCode));
-      if (favoritePark) {
-        this.park.isFavorite = true;
-      }
+      this.park.forEach((item: Park) => {
+        item.isFavorite = this.favorite.isFavorited(item);
+      })
       console.log(this.park.data);
     });
 });
