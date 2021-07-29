@@ -4,15 +4,18 @@ import { Park } from '../interface';
 import { ActivatedRoute } from '@angular/router';
 import { FavoriteService } from '../favorite.service';
 import { faTree } from '@fortawesome/free-solid-svg-icons';
+import { states } from '../states-list/states-list.component';
 
 @Component({
   selector: 'app-park-list',
   templateUrl: './park-list.component.html',
   styleUrls: ['./park-list.component.css'],
+
 })
 export class ParkListComponent implements OnInit {
   parkCode: string = '';
   stateCode: string = '';
+  stateName?: string = '';
   park: Park[] = [];
   faTree = faTree;
   
@@ -23,6 +26,8 @@ export class ParkListComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
       this.stateCode = params['stateCode'];
+      const selectedState= states.find((state:any) => state.stateCode === this.stateCode)
+      if (selectedState){this.stateName=selectedState.stateName}
       this.api.getParks(this.stateCode).subscribe((data) => {
         this.park = data.data;
         this.park.forEach((item: Park) => {
