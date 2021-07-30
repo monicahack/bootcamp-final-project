@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NpsApiService } from '../nps-api.service';
 import { Park } from '../interface';
 import { ActivatedRoute } from '@angular/router';
+import { SearchComponent } from './search/search.component';
 
 
 export interface StateListing {
@@ -232,6 +233,8 @@ export class StatesListComponent implements OnInit {
   index = 0 + this.states.length;
   park: any = {};
   data: Park[] = [];
+  searchName: string = '';
+
   constructor(public api:NpsApiService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {

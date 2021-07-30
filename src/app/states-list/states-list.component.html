@@ -1,3 +1,4 @@
+<input type="text" [(ngModel)]="searchName" placeholder="Search Parks by Name"/>
 <div class="statesButtonArea">
     <button class="statesListing" *ngFor="let state of states; let i = index" [routerLink]="['/park-list']" [queryParams]="{ stateCode: state.stateCode }">
         <h2 class="stateName" >{{state.stateName}}</h2>

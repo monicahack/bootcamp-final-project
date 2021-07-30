@@ -15,6 +15,7 @@ export class SearchComponent implements OnInit {
   constructor(public api:NpsApiService) { }
 
   keywordSearch() {
+    getParks(this.searchName)
     // search.getAll(this.searchName: string): string[];
     // this.search.emit({keyword: this.searchName})
 }

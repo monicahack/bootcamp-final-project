@@ -6,7 +6,10 @@ import {
   StateListing,
 } from './states-list/states-list.component';
 import { ActivatedRoute } from '@angular/router';
+import { SearchComponent } from './search/search.component';
 //imports bring in properties from the interfaces, when  you import, you can access data from another file
+
+
 @Injectable({
   providedIn: 'root',
 })
@@ -31,12 +34,15 @@ export class NpsApiService {
 
   state: string = '';
 
-  constructor(public client: HttpClient, private route: ActivatedRoute) {}
+  constructor(public client: HttpClient, private route: ActivatedRoute, public search: SearchComponent) {}
 
-  getParks(state?: string) {
+  getParks(state?: string, searchTerm?: string) {
     let parksURL = `${this.parksURL}?limit=${this.limit}&api_key=${this.api_key}`;
     if (state) {
       parksURL+= `&stateCode=${state}`
+    }
+    if (searchTerm) {
+      parksURL+= `&q=${searchTerm}`
     }
     return this.client.get<ParkResponse>(parksURL);
   }
