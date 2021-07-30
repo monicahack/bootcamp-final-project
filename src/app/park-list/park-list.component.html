@@ -1,3 +1,4 @@
+<app-search (search)="keywordSearch($event)"></app-search>
 <div class="pageContent">
   <h2 *ngIf="stateName"> Parks in {{stateName}} </h2>
     <div class="parkList">
@@ -25,3 +26,11 @@
 
 
 
+<!-- <div *ngIf="condition; else elseBlock">
+  Content to render when condition is true.
+</div>
+<ng-template #elseBlock>
+  Content to render when condition is false.
+</ng-template> -->
+
+<!-- Clear the state name after searching -->

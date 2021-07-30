@@ -53,10 +53,10 @@ export class NpsApiService {
 
   searchParks(searchParameters: any) {
     let requestParameters: any = {
-      apikey: this.api_key,
+      api_key: this.api_key,
     };
     if (searchParameters.fullName.length > 0) {
-      requestParameters.fullName = searchParameters.fullName;
+      requestParameters.q = searchParameters.fullName;
     }
     return this.client.get<ParkResponse>(this.parksURL, {
       params: requestParameters,

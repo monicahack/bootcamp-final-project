@@ -41,4 +41,19 @@ export class ParkListComponent implements OnInit {
   toggleFavorite(park: Park) {
     this.favorite.toggleFavorite(park);
     }
+
+    keywordSearch(search: any) {
+      this.api
+        .searchParks({
+          fullName: search.fullName,
+        })
+        .subscribe((data) => {
+          if (data) {
+            this.park = data.data;
+            console.log(this.park);
+          } else {
+            this.park = [];
+          }
+        });
+    }
 }
