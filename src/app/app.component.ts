@@ -7,7 +7,7 @@ import { faTree } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'bootcamp-final-project';
+  title = 'Go Park Yourself';
   faTree = faTree;
 }
 

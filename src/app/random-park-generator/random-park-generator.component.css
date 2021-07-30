@@ -96,7 +96,13 @@ button.moreDetails{
     margin: 30px 0px 10px 0px;
 }
 
-#loading{
+button.retryButton{
+    background-color: #CC9C4E;
+    color: #354739;
+    width: 100%;
+}
+
+.loader{
     position: absolute;
     left: 50%;
     top: 50%;
@@ -117,6 +123,13 @@ button.moreDetails{
       100% { transform: rotate(360deg); }
     }
 
+div.display{
+    display: none;
+}
+
+div.show{
+    display: inline;
+}
 
 @media only screen and (min-width: 768px){
     h2.randomParkName{
