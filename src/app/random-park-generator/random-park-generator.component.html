@@ -17,6 +17,10 @@
                         <li *ngFor="let activity of park.data[this.randomNumber].activities | slice:0:30; let i = index;">{{park.data[this.randomNumber].activities[i].name}}</li>
                     </ul> -->
                     <button class="moreDetails"><a routerLink='/park-detail/{{park.data[this.randomNumber].parkCode}}'>View More Details</a></button>
+
+                    
+                    <button class="retryButton" onClick="window.location.reload();">Try Again</button>
+                    
             </div>
         </div>
 </div>
