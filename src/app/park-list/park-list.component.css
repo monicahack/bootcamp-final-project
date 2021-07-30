@@ -54,3 +54,11 @@ ul {
    list-style-type:none;
 
 }
+
+a.detailLink {
+    color: black;
+}
+
+a.detailLink:visited {
+    color: #cc9a4b;
+}

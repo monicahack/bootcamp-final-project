@@ -2,18 +2,23 @@
   <h2 *ngIf="stateName"> Parks in {{stateName}} </h2>
     <div class="parkList">
       <div class="parkListItem" *ngFor="let parks of park; let i = index">
-            <img
+        <a routerLink='/park-detail/{{parks.parkCode}}'>
+        <img
             *ngIf="parks.images[0].url"
             class="parkImage"
             loading="lazy"
             src="{{ parks.images[0].url }}"
             onerror="this.src='/assets/mountain-view.png';"
             />
+          </a>    
+            
            <div class="cardContent">
-              <!-- <a routerLink='/park-detail/{{parks.data[i].parkscode}}'><h3>{{ parks.fullName }}</h3></a> -->
-              <h3>{{ parks.fullName }}</h3>
+            <a class="detailLink" routerLink='/park-detail/{{parks.parkCode}}'><h3>{{ parks.fullName }}</h3></a>
               <button class="favoriteItem" (click)="toggleFavorite(parks)"><fa-icon [icon]="faTree" [ngClass]="parks.isFavorite? 'favColorChange' : 'favColorSolid'"></fa-icon></button>
-           </div>
+            
+          </div>
+          
+
       </div>
     </div>
 </div>
