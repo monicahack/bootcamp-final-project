@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, OnInit } from '@angular/core';
 import { NpsApiService } from '../nps-api.service';
 import { HttpClient } from '@angular/common/http';
-
 
 @Component({
   selector: 'app-search',
