@@ -38,8 +38,23 @@ button {
 
 
 @media only screen and (min-width: 768px) {
+    .searchArea {
+        margin: 20px 10px 30px 10px;
+    }
+
     .searchField{
         width: 70%;
+    }
+
+    input {
+        height: 36px;
+        font-size: 1em;
+    }
+    
+    button {
+        width: 24%;
+        padding: 14px;
+        font-size: 1em;
     }
 }
 
