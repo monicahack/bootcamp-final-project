@@ -15,6 +15,7 @@ import { ParkListComponent } from './park-list/park-list.component';
 import { AppLandingPageComponent } from './app-landing-page/app-landing-page.component';
 import { ParkDetailPageComponent } from './park-detail-page/park-detail-page.component';
 import { FavoriteComponent } from './favorite/favorite.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FavoriteComponent } from './favorite/favorite.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
