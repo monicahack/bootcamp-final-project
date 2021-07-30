@@ -19,6 +19,12 @@ export class RandomParkGeneratorComponent implements OnInit {
   randomNumber = Math.floor((Math.random() * 467) + 1);
   faTree = faTree;
 
+  spinnerDisplay={
+    "display": false,
+    "show": true
+  }
+  
+
   constructor(public api:NpsApiService, private route:ActivatedRoute, public favorite: FavoriteService) { }
 
   ngOnInit(): void {
@@ -33,11 +39,26 @@ export class RandomParkGeneratorComponent implements OnInit {
         
       })
     })
+
+    
   }
 
   toggleFavorite(park: Park) {
     this.favorite.toggleFavorite(park);
     }
+
+    // spinnerFunction(){
+    //   this.spinnerDisplay.display = !this.spinnerDisplay.display
+    //   this.spinnerDisplay.show = !this.spinnerDisplay.show
+    //   setTimeout((spinnerFunction)=>{
+    //     spinnerFunction();
+    // }, 3000);
+    // }
+
+    
+
+
+
   }
 
 
