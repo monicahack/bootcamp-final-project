@@ -1,6 +1,11 @@
 <app-search (search)="keywordSearch($event)"></app-search>
 <div class="pageContent">
-  <h2 *ngIf="stateName"> Parks in {{stateName}} </h2>
+  <div *ngIf="!isSearched else elseBlock">
+    <h2>Parks in {{stateName}}</h2>
+  </div>
+  <ng-template #elseBlock>
+    <h2>Search Results</h2>
+  </ng-template>
     <div class="parkList">
       <div class="parkListItem" *ngFor="let parks of park; let i = index">
         <a routerLink='/park-detail/{{parks.parkCode}}'>
@@ -13,10 +18,9 @@
             />
           </a>    
             
-           <div class="cardContent">
+          <div class="cardContent">
             <a class="detailLink" routerLink='/park-detail/{{parks.parkCode}}'><h3>{{ parks.fullName }}</h3></a>
               <button class="favoriteItem" (click)="toggleFavorite(parks)"><fa-icon [icon]="faTree" [ngClass]="parks.isFavorite? 'favColorChange' : 'favColorSolid'"></fa-icon></button>
-            
           </div>
           
 

@@ -7,10 +7,8 @@ import { ParkListComponent } from './park-list/park-list.component';
 import { SeasonSelectorComponent } from './season-selector/season-selector.component';
 import { RandomParkGeneratorComponent } from './random-park-generator/random-park-generator.component';
 import { MyTripListComponent } from './my-trip-list/my-trip-list.component';
-import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
-  {path: 'test', component: TestComponent},
   {path: 'park-detail/:parkCode', component: ParkDetailPageComponent},
   {path: 'states-list', component: StatesListComponent},
   {path: 'park-list', component: ParkListComponent},

@@ -18,6 +18,7 @@ export class ParkListComponent implements OnInit {
   stateName?: string = '';
   park: Park[] = [];
   faTree = faTree;
+  isSearched: boolean = false;
   
   constructor(public api: NpsApiService, private route: ActivatedRoute, public favorite: FavoriteService) {}
 
@@ -51,6 +52,7 @@ export class ParkListComponent implements OnInit {
           if (data) {
             this.park = data.data;
             console.log(this.park);
+            this.isSearched = true;
           } else {
             this.park = [];
           }
