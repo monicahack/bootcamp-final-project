@@ -1,24 +1,30 @@
+body {
+    margin: 20px;
+}
+
 .parkDetail {
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    flex-direction: column;
     align-content: center;
     margin: 20px;
 }
 
-h2.parkDetailName {
-    max-width: 300px;
-    line-height: 25px;
+h2 {
+    margin-bottom: 6px;
 }
 
-h3.parkDetailAddress {
-    margin-top: -20px;
+h3 {
+    line-height: 24px;
+    margin: 0px;
+    max-width: 90%;
+    font-weight: 500;
+    align-self: center;
 }
 
 .parkDetailDesignation {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     display: block;
-    margin-top: -10px;
     font-weight: 400;
     background: #cc9a4b;
     color: white;
@@ -29,14 +35,23 @@ h3.parkDetailAddress {
     padding-right: 6px;
 } 
 
-p.parkDetailDescription, ul.parkDetailActivities, ul.parkDetailHours {
-    margin-top: -15px;
+.cardContent {
+    margin: 20px;
+}
+
+.parkDetailItem {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 img.parkDetailImg {
-    max-width: 325px;
-    border-radius: 10px;
-    margin-top: 5px;
+    width: 100%;
+    object-fit: cover;
+    max-height: 370px;
+    border-radius: 10px 10px 0px 0px;
 }
 
 ul.parkDetailActivities, ul.parkDetailHours {
@@ -53,21 +68,18 @@ li {
 }
 
 .favoriteItem {
-    position: absolute;
-    left: 325px;
+    display: inline;
+    float: right;
+    padding: 0;
 }
 
-@media only screen and (min-width: 768px) {
-    h2.parkDetailName {
-        max-width: 800px;
+@media only screen and (min-width: 768px) {     
+    img.parkDetailImg {
+        max-height: 470px;
     }
 
-    .favoriteItem {
-        left: 725px;
-    }
-    
-    img.parkDetailImg {
-        max-width: 725px;
+    h3 {
+        max-width: 100%;
     }
 
     ul.parkDetailActivities {
@@ -77,12 +89,8 @@ li {
     }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) {   
     img.parkDetailImg {
-        max-width: 850px;
-    }
-
-    .favoriteItem {
-        left: 850px;
+        max-height: 470px;
     }
 }
