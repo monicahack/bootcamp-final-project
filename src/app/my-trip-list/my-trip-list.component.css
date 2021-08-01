@@ -1,28 +1,123 @@
-.tripList, .noFavorites {
+body {
     margin: 20px;
 }
 
-.tripListContainer {
+h2 {
+    margin-bottom: 6px;
+}
+
+h3 {
+    line-height: 24px;
+    margin: 0px;
+    max-width: 90%;
+    font-weight: 500;
+    align-self: center;
+}
+
+.pageContent {
+    margin: 20px;
+}
+
+.favoriteList {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.favoriteListItem {
+    width: 100%;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
-    padding: 8x;
     margin: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-h2.parkFavoriteName {
-    max-width: 300px;
-    line-height: 25px;
-}
-
-img.parkFavoriteImg {
-    max-width: 150px;
-    border-radius: 10px;
-    padding: 8px;
+.cardContent {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: -10px;
+    padding: 14px;
+    justify-content: space-between;
 }
 
 .favoriteItem {
-    float: right;
+    padding: 0px;
+}
+
+.parkFavoriteImg{
+    width: 100%;
+    object-fit: cover;
+    max-height: 370px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+a.detailLink {
+    color: black;
+}
+
+a.detailLink:visited {
+    color: #cc9a4b;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .favoriteList {
+        display: block;
+        column-count: 2;
+        column-gap: 30px;
+    }
+
+    .favoriteListItem{
+        margin: 0;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        margin-bottom: 30px;
+        break-inside: avoid;
+        grid-row: 1 / -1;
+        grid-column: 1;
+    }
+
+    .parkFavoriteImg{
+        max-height: 470px;
+    }
+
+    h3 {
+        max-width: 100%;
+    }
+
+    .cardContent {
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    h2 {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+
+    .favoriteList {
+        display: block;
+        column-count: 3;
+        column-gap: 30px;
+
+    }
+
+    .favoriteListItem{
+        margin: 0;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        margin-bottom: 30px;
+        break-inside:avoid;
+        grid-row: 1 / -1;
+        grid-column: 1;
+    }
+
+    .parkFavoriteImg{
+        max-height: 470px;
+    }
+
 }
