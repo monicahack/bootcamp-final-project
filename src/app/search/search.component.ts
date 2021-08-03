@@ -14,6 +14,14 @@ export class SearchComponent {
   constructor(public api:NpsApiService) { }
 
   keywordSearch() {
-    this.search.emit(this.searchName)
+    this.search.emit(this.searchName);
   }
+  
+  handleKeyUp(event: any){
+    event.preventDefault();
+    if(event.keyCode === 13){
+       this.search.emit(this.searchName);
+    }
+ }
+
 }
