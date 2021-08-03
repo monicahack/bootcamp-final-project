@@ -86,4 +86,8 @@ li {
     img.parkDetailImg {
         max-height: 470px;
     }
+
+    p {
+        max-width: 80%;
+    }
 }
