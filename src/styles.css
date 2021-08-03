@@ -14,10 +14,6 @@ li{
     color:rgb(57, 57, 57);
 }
 
-/* p, h1, h2, h3, h4 {
-    max-width: 400px;
-} */
-
 a {
     text-decoration: none;
     color: #cc9a4b;
@@ -80,20 +76,11 @@ button {
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16);
 }
 
-
-
 .leftLogoArea{
     margin-left: 20px;
 }
 
-
-
-
 @media only screen and (min-width: 768px) {
-    p, h1, h2, h3, h4 {
-        max-width: 750px;
-    }
-
     nav{
         display: flex;
     }
@@ -103,10 +90,6 @@ button {
 @media only screen and (min-width: 1024px){
     nav{
         display: flex;
-    }
-
-    p, h1, h2, h3, h4 {
-        max-width: 850px;
     }
 
 }

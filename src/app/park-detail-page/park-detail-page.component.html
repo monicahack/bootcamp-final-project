@@ -2,7 +2,6 @@
     <ng-container *ngIf="park.data.length">
     <div class="parkDetailItem" *ngFor="let parks of park.data, let i =index;">
         <img class="parkDetailImg" src="{{parks.images[0].url}}">
-        <div class="cardContent">
         <span class = "parkDetailDesignation">{{parks.designation}}</span>
         <button class="favoriteItem" (click)="toggleFavorite(parks)"><fa-icon [icon]="faTree" [ngClass]="parks.isFavorite? 'favColorChange' : 'favColorSolid'"></fa-icon></button>
         <h2 class="parkDetailName">{{parks.fullName}}</h2>
@@ -28,6 +27,5 @@
             </span>
         <p class="parkDetailNPS">Visit <a href="{{parks.url}}">National Park Service</a> for more park details.</p>    
         </div>
-    </div>
 </ng-container>
 </div>

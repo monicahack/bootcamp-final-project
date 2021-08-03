@@ -33,25 +33,18 @@ h3 {
     border-radius: 6px;
     padding-left: 6px;
     padding-right: 6px;
+    margin-top: 10px;
 } 
-
-.cardContent {
-    margin: 20px;
-}
 
 .parkDetailItem {
     width: 100%;
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    margin: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 img.parkDetailImg {
     width: 100%;
     object-fit: cover;
     max-height: 370px;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 10px;
 }
 
 ul.parkDetailActivities, ul.parkDetailHours {
