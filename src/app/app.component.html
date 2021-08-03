@@ -6,6 +6,6 @@
         <li class="treeIcon"[routerLink]="'/my-trip-list/'"><fa-icon [icon]="faTree" ></fa-icon></li>
     </ul>
 </nav>
-
+<div class="search"><app-search (search)="keywordSearch($event)"></app-search></div>
 
 <router-outlet></router-outlet>
