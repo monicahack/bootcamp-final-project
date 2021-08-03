@@ -4,7 +4,7 @@
 <div class="favoriteList">
 <div class="favoriteListItem" *ngFor="let park of favoriteList, let i =index;">
     <a routerLink='/park-detail/{{park.parkCode}}'>       
-        <img class="parkFavoriteImg" src="{{park.images[0].url}}">
+        <img class="parkFavoriteImg" src="{{park.images[0].url}}" onerror="this.src='./assets/mountain-view.png';">
     </a> 
         <div class="cardContent">
             <a class="detailLink" routerLink='/park-detail/{{park.parkCode}}'><h3>{{park.fullName}}</h3></a>
