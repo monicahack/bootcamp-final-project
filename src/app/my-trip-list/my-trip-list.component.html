@@ -1,13 +1,14 @@
 <div class="pageContent">
-<h2 class="tripList">My Trip List</h2>
+<h2>My Trip List</h2>
 <p class="noFavorites" *ngIf="favoriteList.length===0">Start adding parks to your trip list by clicking the <fa-icon [icon]="faTree"></fa-icon> next to any park listing.</p>
-<div class="favoriteList" *ngFor="let park of favoriteList, let i =index;">
-<div class="favoriteListItem" >
-            <img class="parkFavoriteImg" src="{{park.images[0].url}}">
+<div class="favoriteList">
+<div class="favoriteListItem" *ngFor="let park of favoriteList, let i =index;">
+    <a routerLink='/park-detail/{{park.parkCode}}'>       
+        <img class="parkFavoriteImg" src="{{park.images[0].url}}" onerror="this.src='./assets/mountain-view.png';">
+    </a> 
         <div class="cardContent">
             <a class="detailLink" routerLink='/park-detail/{{park.parkCode}}'><h3>{{park.fullName}}</h3></a>
             <button class="favoriteItem" (click)="toggleFavorite(park)"><fa-icon [icon]="faTree" [ngClass]="park.isFavorite? 'favColorChange' : 'favColorSolid'"></fa-icon></button>
         </div>
     </div>
-</div>
 </div>
