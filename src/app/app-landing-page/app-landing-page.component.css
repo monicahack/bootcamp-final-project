@@ -6,35 +6,62 @@
     not centered vertically since button 
     styling already exists on styles.css
 } */
+body,html {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+
+.landingPageContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+    height: 88vh;
+}
 
 .buttonSurprise{
     background-color: #94C9A9;
     color:rgb(56, 40, 40);
 }
 
-.planSection{
+.planSectionCard{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    background-color: #94C9A9;
+    flex: 50;
+    margin-bottom: 10px;
     width: 100%;
-    height: 50vh;
-    margin-bottom: 20px;
+    background-color: #94C9A9;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.noPlanSection{
+.planSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.noPlanSectionCard{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    background-color:#354739;
+    flex: 50;
     width: 100%;
-    height: 50vh;
+    background-color:#354739;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.noPlanSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .tentIcon{
@@ -46,30 +73,27 @@
     margin-bottom: 30px;
 }
 
-.landingPageContent{
-    margin: 10px;
-}
-
 @media only screen and (min-width: 768px) {
-    .planSection{
-        display: flex;
-        justify-content: center;
-        background-color:#94C9A9;
-        width: 100%;
-        height: 50vh;
-        margin-bottom: 20px;
-        border-radius: 5px;
-    
+    .landingPageContent{
+        flex-direction: row;
+        /* justify-content: space-around; */
+        /* align-items: baseline; */
+        /* margin: 10px; */
+        height: 100vh;
     }
-    
-    .noPlanSection{
-        display: flex;
-        justify-content: center;
-        background-color:#354739;
-        width: 100%;
-        height: 50vh;
-        border-radius: 5px;
+
+    .planSectionCard{
+        flex: 50;
+        margin-bottom: 0px;
+        margin-right: 10px;
+        /* height: 100vh; */
     }
+
+    .noPlanSectionCard{
+        flex: 50;
+        /* height: 100vh; */
+    }
+
     .buttonSurprise{
         background-color: #94C9A9;
     }
