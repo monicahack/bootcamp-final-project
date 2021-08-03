@@ -78,6 +78,7 @@ a.detailLink:visited {
         break-inside: avoid;
         grid-row: 1 / -1;
         grid-column: 1;
+        transform: translateZ(0);
     }
 
     .parkFavoriteImg{
