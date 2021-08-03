@@ -16,6 +16,7 @@ export class ParkDetailPageComponent implements OnInit {
   webcam: any = {data:[]}; 
   url:string = '';
   faTree = faTree;
+  
 
   constructor(public api:NpsApiService, private route:ActivatedRoute, public favorite: FavoriteService) { }
 

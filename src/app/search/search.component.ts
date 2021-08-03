@@ -7,13 +7,13 @@ import { NpsApiService } from '../nps-api.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
-  @Output()search = new EventEmitter<{}>();
+  @Output()search = new EventEmitter<string>();
 
   searchName: string = '';
 
   constructor(public api:NpsApiService) { }
 
   keywordSearch() {
-    this.search.emit({fullName: this.searchName})
+    this.search.emit(this.searchName)
   }
 }
