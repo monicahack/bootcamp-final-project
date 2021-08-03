@@ -1,11 +1,16 @@
 <div class="landingPageContent">
-    <div class="planSection">
-        <img class="tentIcon" src="./assets/tent.png">
-        <button [routerLink]="'/states-list/'">I have a plan</button>
+    <div class="planSectionCard">
+        <div class="planSection">
+            <img class="tentIcon" src="./assets/tent.png">
+            <button [routerLink]="'/states-list/'">I have a plan</button>
+        </div>
     </div>
-    <div class="noPlanSection">
-        <img class="thinkingIcon" src="./assets/noplan.png">
-        <button class="buttonSurprise"[routerLink]="'/random-park-generator/'">Surprise Me!</button>
-        
-    </div>
+
+    <div class="noPlanSectionCard">
+        <div class="noPlanSection">
+            <img class="thinkingIcon" src="./assets/noplan.png">
+            <button class="buttonSurprise"[routerLink]="'/random-park-generator/'">Surprise Me!</button>
+            
+        </div>
+    </div>    
 </div>

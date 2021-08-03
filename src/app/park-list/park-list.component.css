@@ -134,12 +134,12 @@ a.detailLink:visited {
     } */
     
     /* for masonry style layout */
+
     .parkList {
         display: block;
         column-count: 2;
         column-gap: 30px;
-        /* margin: 30px; */
-        /* max-width: 1024px; */
+        align-tracks: start;
     }
 
     .parkListItem{
@@ -150,7 +150,7 @@ a.detailLink:visited {
         break-inside: avoid;
         grid-row: 1 / -1;
         grid-column: 1;
-        /* max-width: 90%; */
+        transform: translateZ(0);
     }
 
     .parkImage{
@@ -201,13 +201,10 @@ a.detailLink:visited {
     } */
     
     /* for masonry style layout */
-    .parkList {
+    /* .parkList {
         display: block;
         column-count: 3;
         column-gap: 30px;
-        /* padding: 30px; */
-        /* padding-bottom: 30px;
-        margin-bottom: 30px; */
     }
 
     .parkListItem{
@@ -218,8 +215,7 @@ a.detailLink:visited {
         break-inside:avoid;
         grid-row: 1 / -1;
         grid-column: 1;
-        /* min-height: 600px; */
-    }
+    } */
 
     .parkImage{
         max-height: 470px;

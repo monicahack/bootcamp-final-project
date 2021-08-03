@@ -33,7 +33,7 @@ button {
 
 .treeIcon{
     list-style-type: none;
-    margin-right: 20px;
+    margin-right: 24px;
     cursor: pointer;
     font-size: 25px;
 }
@@ -42,7 +42,8 @@ button {
 }
 
 .logo{
-    max-width: 150px;
+    max-width: 80px;
+    margin-top: 5px;
 }
 
 .favoriteItem {
@@ -63,7 +64,7 @@ button {
 
 .navigationContent{
     margin: 0px;
-    height: 150px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -84,6 +85,21 @@ button {
     nav{
         display: flex;
     }
+
+    .navigationContent{
+        height: 120px;
+    }
+
+    .logo{
+        max-width: 120px;
+        margin-top: 5px;
+    }
+
+    .treeIcon {
+       margin-right: 38px; 
+       font-size: 30px;
+    }
+    
 
 }
 
