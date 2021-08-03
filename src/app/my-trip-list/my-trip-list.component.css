@@ -88,9 +88,6 @@ a.detailLink:visited {
         max-width: 100%;
     }
 
-    .cardContent {
-        align-items: center;
-    }
 }
 
 @media only screen and (min-width: 1024px) {
