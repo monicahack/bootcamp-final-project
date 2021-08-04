@@ -10,7 +10,7 @@
         <p class="parkDetailDescription">{{parks.description}}</p>
         <h4 *ngIf="parks.activities.length">Activities</h4>
         <ul class="parkDetailActivities">
-            <li *ngFor="let activity of parks.activities | slice:0:30; let i =index;">{{parks.activities[i].name}}</li>
+            <li *ngFor="let activity of parks.activities | slice:0:50; let i =index;">{{parks.activities[i].name}}</li>
         </ul>
         <h4 *ngIf="parks.operatingHours[i].standardHours">Hours</h4>
         <ul class="parkDetailHours">
@@ -21,9 +21,12 @@
             <li *ngIf="parks.operatingHours[i].standardHours.friday"><strong>Friday:</strong> {{parks.operatingHours[i].standardHours.friday}}</li>
             <li *ngIf="parks.operatingHours[i].standardHours.saturday"><strong>Saturday:</strong> {{parks.operatingHours[i].standardHours.saturday}}</li>
             <li *ngIf="parks.operatingHours[i].standardHours.sunday"><strong>Sunday:</strong> {{parks.operatingHours[i].standardHours.sunday}}</li>
-        </ul>
-            <span *ngFor="let webcam of webcam.data">
-                <a *ngIf="webcam.url.includes('/air')" href='{{webcam.url}}'><button class="parkDetailWebcam">View Live Webcam</button></a>
+        </ul>                
+        
+
+                <h4 *ngIf="webcam.data.length">View Live Webcams</h4>
+                <span *ngFor="let webcam of webcam.data">
+                    <a *ngIf="webcam.url" href='{{webcam.url}}'><button class="parkDetailWebcam">{{ (webcam.title.length>20)? (webcam.title | slice:0:20)+'..':(webcam.title) }}</button></a>
             </span>
         <p class="parkDetailNPS">Visit <a href="{{parks.url}}">National Park Service</a> for more park details.</p>    
         </div>
