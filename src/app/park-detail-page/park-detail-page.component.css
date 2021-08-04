@@ -66,6 +66,11 @@ li {
     padding: 0;
 }
 
+button.parkDetailWebcam {
+    margin-right: 12px;
+    margin-bottom: 12px;
+}
+
 @media only screen and (min-width: 768px) {     
     img.parkDetailImg {
         max-height: 470px;
@@ -87,7 +92,14 @@ li {
         max-height: 470px;
     }
 
+    .favoriteItem {
+        padding: 0;
+        position: absolute;
+        left: 77%;
+    }
+
     p {
         max-width: 80%;
     }
+
 }
