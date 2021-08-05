@@ -1,42 +1,35 @@
-<!-- <app-search (search)="keywordSearch($event)"></app-search> -->
 <div class="pageContent">
-  <div *ngIf="!isSearched else elseBlock">
-    <h2>Parks in {{stateName}}</h2>
+  <div *ngIf="!isSearched; else elseBlock">
+    <h2>Parks in {{ stateName }}</h2>
   </div>
   <ng-template #elseBlock>
     <h2>Search Results</h2>
   </ng-template>
-    <div class="parkList">
-      <div class="parkListItem" *ngFor="let parks of park; let i = index">
-        <a routerLink='/park-detail/{{parks.parkCode}}'>
+  <div class="parkList">
+    <div class="parkListItem" *ngFor="let parks of park; let i = index">
+      <a routerLink="/park-detail/{{ parks.parkCode }}">
         <img
-            *ngIf="parks.images[0].url"
-            class="parkImage"
-            loading="lazy"
-            src="{{ parks.images[0].url }}"
-            onerror="this.src='./assets/mountain-view.png';"
-            />
-          </a>    
-            
-          <div class="cardContent">
-            <a class="detailLink" routerLink='/park-detail/{{parks.parkCode}}'><h3>{{ parks.fullName }}</h3></a>
-              <button class="favoriteItem" (click)="toggleFavorite(parks)"><fa-icon [icon]="faTree" [ngClass]="parks.isFavorite? 'favColorChange' : 'favColorSolid'"></fa-icon></button>
-          </div>
-          
+          *ngIf="parks.images[0].url"
+          class="parkImage"
+          loading="lazy"
+          src="{{ parks.images[0].url }}"
+          onerror="this.src='./assets/mountain-view.png';"
+        />
+        <!-- The onerror attribute fires when an error occurs while loading an external file (e.g. a document or an image)-->
+      </a>
 
+      <div class="cardContent">
+        <a class="detailLink" routerLink="/park-detail/{{ parks.parkCode }}"
+          ><h3>{{ parks.fullName }}</h3></a
+        >
+        <button class="favoriteItem" (click)="toggleFavorite(parks)">
+          <fa-icon
+            [icon]="faTree"
+            [ngClass]="parks.isFavorite ? 'favColorChange' : 'favColorSolid'"
+          ></fa-icon>
+        </button>
       </div>
     </div>
+  </div>
 </div>
 <h4 class="resultsEndTitle">end of results</h4>
-
-
-
-
-<!-- <div *ngIf="condition; else elseBlock">
-  Content to render when condition is true.
-</div>
-<ng-template #elseBlock>
-  Content to render when condition is false.
-</ng-template> -->
-
-<!-- Clear the state name after searching -->
