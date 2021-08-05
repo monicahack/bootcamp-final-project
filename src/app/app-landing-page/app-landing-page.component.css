@@ -24,7 +24,11 @@ body,html {
 
 .buttonSurprise{
     background-color: #94C9A9;
-    color:rgb(56, 40, 40);
+    color:#354739
+}
+
+.buttonSurprise:hover{
+    background-color: #77a388;
 }
 
 .planSectionCard{
