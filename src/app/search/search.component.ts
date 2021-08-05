@@ -17,11 +17,11 @@ export class SearchComponent {
     this.search.emit(this.searchName);
   }
   
+  //submit search on keyup of enter key
   handleKeyUp(event: any){
     event.preventDefault();
     if(event.keyCode === 13){
        this.search.emit(this.searchName);
     }
- }
-
+  }
 }
