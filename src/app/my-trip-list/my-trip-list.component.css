@@ -53,6 +53,10 @@ h3 {
     padding: 0px;
 }
 
+button.favoriteItem {
+    background-color: transparent;
+}
+
 .parkFavoriteImg{
     width: 100%;
     object-fit: cover;

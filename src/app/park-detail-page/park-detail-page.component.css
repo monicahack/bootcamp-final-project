@@ -66,6 +66,10 @@ li {
     padding: 0;
 }
 
+button.favoriteItem {
+    background-color: transparent;
+}
+
 button.parkDetailWebcam {
     margin-right: 12px;
     margin-bottom: 12px;

@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FavoriteService } from '../favorite.service';
 import { faTree } from '@fortawesome/free-solid-svg-icons';
 import { Park } from '../interface';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-park-detail-page',
