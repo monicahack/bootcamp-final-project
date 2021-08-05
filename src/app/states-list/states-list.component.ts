@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NpsApiService } from '../nps-api.service';
 import { Park } from '../interface';
 import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 
 export interface StateListing {
@@ -232,9 +233,11 @@ export class StatesListComponent implements OnInit {
   index = 0 + this.states.length;
   park: any = {};
   data: Park[] = [];
-  constructor(public api:NpsApiService, private route:ActivatedRoute) { }
+  title = 'State List | Go Park Yourself';
+  constructor(public api:NpsApiService, private route:ActivatedRoute, private titleService: Title) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle(this.title);
   //   this.route.params.subscribe((params) => {
   //   this.states = params['states'];
   //   this.api.getParks().subscribe((data) => {
