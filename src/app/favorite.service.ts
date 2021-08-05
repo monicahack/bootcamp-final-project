@@ -18,7 +18,7 @@ toggleFavorite(park: Park) {
     park.isFavorite = false;
     let index = this.favoriteList.findIndex((item) => park.parkCode === item.parkCode);
     console.log(index);
-    //adds favorite to array
+    //if false or not favorite removes from array
     this.favoriteList.splice(index, 1);
   } else {
     //if is favorite, pushes to park array

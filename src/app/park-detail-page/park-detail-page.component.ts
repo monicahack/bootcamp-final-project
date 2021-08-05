@@ -13,7 +13,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class ParkDetailPageComponent implements OnInit {
   parkCode: string = '';
-  park: any = {data:[]};
+  park: any = {data:[]};   //accessing at data level of api thru Park interface
   webcam: any = {data:[]}; 
   url:string = '';
   faTree = faTree;
