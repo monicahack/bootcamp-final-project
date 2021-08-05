@@ -4,6 +4,8 @@ import { NpsApiService } from '../nps-api.service';
 import { Park } from '../interface';
 import { FavoriteService } from '../favorite.service';
 import { faTree } from '@fortawesome/free-solid-svg-icons';
+import { Title } from '@angular/platform-browser';
+
 
 
 @Component({
@@ -12,7 +14,7 @@ import { faTree } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./random-park-generator.component.css']
 })
 export class RandomParkGeneratorComponent implements OnInit {
-
+  title = 'Random Park | Go Park Yourself';
   parkCode: string = '';
   park: any = {data:[]};
   data: Park[] = [];
@@ -25,10 +27,11 @@ export class RandomParkGeneratorComponent implements OnInit {
   }
   
 
-  constructor(public api:NpsApiService, private route:ActivatedRoute, public favorite: FavoriteService) { }
+  constructor(public api:NpsApiService, private route:ActivatedRoute, public favorite: FavoriteService, private titleService: Title) { }
 
   ngOnInit(): void {
-      // Line 32 makes the data available from NPS API
+    this.titleService.setTitle(this.title);
+      // Line 35 makes the data available from NPS API
       this.api.getParks().subscribe((data)=>{
         this.park = data;
         this.park.forEach((item: Park) => {

@@ -35,11 +35,6 @@ h3 {
     transition: transform .45s ease, background .45s ease;
 }
 
-.favoriteListItem:hover{
-    background: #cc9a4b;
-    transform: scale(.97);
-}
-
 .cardContent {
     display: flex;
     flex-direction: row;
@@ -67,8 +62,6 @@ button.favoriteItem {
 a.detailLink {
     color: black;
 }
-
-
 
 @media only screen and (min-width: 768px) {
     .favoriteList {
@@ -123,6 +116,11 @@ a.detailLink {
 
     .parkFavoriteImg{
         max-height: 470px;
+    }
+
+    .favoriteListItem:hover{
+        background: #cc9a4b;
+        transform: scale(.97);
     }
 
 }
