@@ -4,6 +4,8 @@ import { Park } from './interface';
 import { NpsApiService } from './nps-api.service';
 import { states } from './states-list/states-list.component';
 import { Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-root',
@@ -11,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Go Park Yourself';
+  title = 'Home | Go Park Yourself';
   faTree = faTree;
   parkCode: string = '';
   stateCode: string = '';
@@ -22,22 +24,16 @@ export class AppComponent {
   constructor(
     public api: NpsApiService,
     private route: Router,
-
+    private titleService: Title
     ) {}
 
   queryParam: string = '';
 
-/*   ngOnInit(): void {
-    this.route.params.subscribe((params) => {
-      this.parkCode = params['parkCode'];
-      this.api.getParks(this.stateCode).subscribe((data) => {
-        this.park = data.data;
-        /* this.park.forEach((item: Park) => {
-       item.isFavorite = this.favorite.isFavorited(item); 
-    }) 
-      });
-    });
-  } */
+  ngOnInit(): void {
+    //sets page title
+    this.titleService.setTitle(this.title);
+  } 
+  
   keywordSearch(search: any) {
     this.route.navigate(['park-list'], { queryParams: { search: search } });
     console.log(search);

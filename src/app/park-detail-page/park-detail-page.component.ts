@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FavoriteService } from '../favorite.service';
 import { faTree } from '@fortawesome/free-solid-svg-icons';
 import { Park } from '../interface';
-import { Title, Meta } from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-park-detail-page',
@@ -17,16 +17,20 @@ export class ParkDetailPageComponent implements OnInit {
   webcam: any = {data:[]}; 
   url:string = '';
   faTree = faTree;
-  
+  title = 'Park Detail | Go Park Yourself';
 
-  constructor(public api:NpsApiService, private route:ActivatedRoute, public favorite: FavoriteService) { }
+  constructor(public api:NpsApiService, private route:ActivatedRoute, public favorite: FavoriteService, private titleService: Title) { }
 
   ngOnInit(): void {
+    //sets page title
+    this.titleService.setTitle(this.title);
+    //park by park code param
     this.route.params.subscribe((params) => {
       this.parkCode = params['parkCode'];
     this.api.getParkDetails(this.parkCode).subscribe((data) => {
       this.park = data;
       console.log(this.park.data);
+      //loops thru to check for if favorites
       this.park.forEach((item: Park) => {
         item.isFavorite = this.favorite.isFavorited(item);
       })
@@ -34,6 +38,7 @@ export class ParkDetailPageComponent implements OnInit {
     });
 });
 
+//webcam
   this.route.params.subscribe((params) => {
     this.parkCode = params['parkCode'];
   this.api.getWebcam(this.parkCode).subscribe((data) => {

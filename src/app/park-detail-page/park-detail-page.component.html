@@ -1,34 +1,38 @@
 <div class="parkDetail">
+    <!-- ng-container is workaround to use ngIf and ngFor together in next div -->
     <ng-container *ngIf="park.data.length">
-    <div class="parkDetailItem" *ngFor="let parks of park.data, let i =index;">
-        <img class="parkDetailImg" src="{{parks.images[0].url}}" onerror="this.style='object-fit:contain'; this.src='./assets/mountain-view.png';">
-        <span class = "parkDetailDesignation">{{parks.designation}}</span>
-        <button class="favoriteItem" (click)="toggleFavorite(parks)"><fa-icon [icon]="faTree" [ngClass]="parks.isFavorite? 'favColorChange' : 'favColorSolid'"></fa-icon></button>
-        <h2 class="parkDetailName">{{parks.fullName}}</h2>
-        <h3 class ="parkDetailAddress">{{parks.addresses[0].city}}, {{parks.addresses[0].stateCode}}</h3>
-        <h4 *ngIf="parks.description">Description</h4>
-        <p class="parkDetailDescription">{{parks.description}}</p>
-        <h4 *ngIf="parks.activities.length">Activities</h4>
-        <ul class="parkDetailActivities">
-            <li *ngFor="let activity of parks.activities | slice:0:50; let i =index;">{{parks.activities[i].name}}</li>
-        </ul>
-        <h4 *ngIf="parks.operatingHours[i].standardHours">Hours</h4>
-        <ul class="parkDetailHours">
-            <li *ngIf="parks.operatingHours[i].standardHours.monday"><strong>Monday:</strong> {{parks.operatingHours[i].standardHours.monday}}</li>
-            <li *ngIf="parks.operatingHours[i].standardHours.tuesday"><strong>Tuesday:</strong> {{parks.operatingHours[i].standardHours.tuesday}}</li>
-            <li *ngIf="parks.operatingHours[i].standardHours.wednesday"><strong>Wednesday:</strong> {{parks.operatingHours[i].standardHours.wednesday}}</li>
-            <li *ngIf="parks.operatingHours[i].standardHours.thursday"><strong>Thursday:</strong> {{parks.operatingHours[i].standardHours.thursday}}</li>
-            <li *ngIf="parks.operatingHours[i].standardHours.friday"><strong>Friday:</strong> {{parks.operatingHours[i].standardHours.friday}}</li>
-            <li *ngIf="parks.operatingHours[i].standardHours.saturday"><strong>Saturday:</strong> {{parks.operatingHours[i].standardHours.saturday}}</li>
-            <li *ngIf="parks.operatingHours[i].standardHours.sunday"><strong>Sunday:</strong> {{parks.operatingHours[i].standardHours.sunday}}</li>
-        </ul>                
+        <div class="parkDetailItem" *ngFor="let parks of park.data, let i =index;">
+            <img class="parkDetailImg" src="{{parks.images[0].url}}" onerror="this.style='object-fit:contain'; this.src='./assets/mountain-view.png';">
+            <span class = "parkDetailDesignation">{{parks.designation}}</span>
+            <button class="favoriteItem" (click)="toggleFavorite(parks)"><fa-icon [icon]="faTree" [ngClass]="parks.isFavorite? 'favColorChange' : 'favColorSolid'"></fa-icon></button>
+            
+            <h2 class="parkDetailName">{{parks.fullName}}</h2>
+            <h3 class ="parkDetailAddress">{{parks.addresses[0].city}}, {{parks.addresses[0].stateCode}}</h3>
+            <h4 *ngIf="parks.description">Description</h4>
+            <p class="parkDetailDescription">{{parks.description}}</p>
+            <h4 *ngIf="parks.activities.length">Activities</h4>
+            
+            <ul class="parkDetailActivities">
+                <!-- slice limits the number of activities displayed -->
+                <li *ngFor="let activity of parks.activities | slice:0:50; let i =index;">{{parks.activities[i].name}}</li>
+            </ul>
+            <h4 *ngIf="parks.operatingHours[i].standardHours">Hours</h4>
+            <ul class="parkDetailHours">
+                <li *ngIf="parks.operatingHours[i].standardHours.monday"><strong>Monday:</strong> {{parks.operatingHours[i].standardHours.monday}}</li>
+                <li *ngIf="parks.operatingHours[i].standardHours.tuesday"><strong>Tuesday:</strong> {{parks.operatingHours[i].standardHours.tuesday}}</li>
+                <li *ngIf="parks.operatingHours[i].standardHours.wednesday"><strong>Wednesday:</strong> {{parks.operatingHours[i].standardHours.wednesday}}</li>
+                <li *ngIf="parks.operatingHours[i].standardHours.thursday"><strong>Thursday:</strong> {{parks.operatingHours[i].standardHours.thursday}}</li>
+                <li *ngIf="parks.operatingHours[i].standardHours.friday"><strong>Friday:</strong> {{parks.operatingHours[i].standardHours.friday}}</li>
+                <li *ngIf="parks.operatingHours[i].standardHours.saturday"><strong>Saturday:</strong> {{parks.operatingHours[i].standardHours.saturday}}</li>
+                <li *ngIf="parks.operatingHours[i].standardHours.sunday"><strong>Sunday:</strong> {{parks.operatingHours[i].standardHours.sunday}}</li>
+            </ul>                
         
-
-                <h4 *ngIf="webcam.data.length">View Live Webcams</h4>
+            <h4 *ngIf="webcam.data.length">View Live Webcams</h4>
                 <span *ngFor="let webcam of webcam.data">
                     <a *ngIf="webcam.url" href='{{webcam.url}}'><button class="parkDetailWebcam">{{ (webcam.title.length>20)? (webcam.title | slice:0:20)+'..':(webcam.title) }}</button></a>
-            </span>
-        <p class="parkDetailNPS">Visit <a href="{{parks.url}}">National Park Service</a> for more park details.</p>    
+                </span>
+                <!-- external link to NPS park page -->
+                <p class="parkDetailNPS">Visit <a href="{{parks.url}}">National Park Service</a> for more park details.</p>    
         </div>
-</ng-container>
+    </ng-container>
 </div>
