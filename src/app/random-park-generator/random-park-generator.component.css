@@ -131,6 +131,10 @@ div.show{
     display: inline;
 }
 
+button.favoriteItem{
+    background-color: transparent;
+}
+
 @media only screen and (min-width: 768px){
     h2.randomParkName{
         max-width: 800px;
@@ -159,6 +163,10 @@ div.show{
 
     .favoriteItem {
         left: 850px;
+    }
+
+    button.retryButton:hover{
+        background-color: #be9147;
     }
   
 }

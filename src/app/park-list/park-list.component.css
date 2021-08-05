@@ -75,10 +75,6 @@ h4:after {
     transition: transform .45s ease, background .45s ease;
 }
 
-.parkListItem:hover{
-    background: #cc9a4b;
-    transform: scale(.97);
-}
 
 .cardContent {
     display: flex;
@@ -225,5 +221,14 @@ a.detailLink {
 
     .resultsEndTitle {
         font-size: 24px;
+    }
+
+    .parkListItem:hover{
+        background: #cc9a4b;
+        transform: scale(.97);
+    }
+
+    button.favoriteItem{
+        background-color: transparent;
     }
 }

@@ -27,10 +27,6 @@ body,html {
     color:#354739
 }
 
-.buttonSurprise:hover{
-    background-color: #77a388;
-}
-
 .planSectionCard{
     display: flex;
     justify-content: center;
@@ -137,6 +133,9 @@ body,html {
     .thinkingIcon{
         max-width: 300px;
         margin-bottom: 30px;
+    }
+    .buttonSurprise:hover{
+        background-color: #77a388;
     }
 
 }

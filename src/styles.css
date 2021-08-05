@@ -31,10 +31,6 @@ button {
     width: 200px;
 }
 
-button:hover{
-    background-color: #202b22;
-}
-
 .treeIcon{
     list-style-type: none;
     margin-right: 24px;
@@ -42,25 +38,6 @@ button:hover{
     font-size: 25px;
     color: rgb(57, 57, 57);
 }
-.treeIcon:hover{
-    color: #CC9C4E;
-}
-.treeIcon:hover:after{
-    content: "Trip List";
-    /* display: block; */
-    position: absolute;
-    top: 45px;
-    right: 380px;
-    width: fit-content;
-    background: black;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    text-align: center;
-}
-
-
 
 .logo{
     max-width: 80px;
@@ -141,8 +118,27 @@ button:hover{
 }
 
 @media only screen and (min-width: 1024px){
-    /* nav{
-        display: flex;
-    } */
+    button:hover{
+        background-color: #202b22;
+    }
+
+    .treeIcon:hover{
+        color: #CC9C4E;
+    }
+    
+    .treeIcon:hover:after{
+        content: "Trip List";
+        /* display: block; */
+        position: absolute;
+        top: 45px;
+        right: 380px;
+        width: fit-content;
+        background: black;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        text-align: center;
+    }
 
 }
