@@ -1,0 +1,90 @@
+body{
+    margin: 0px;
+}
+
+.navigationContent{
+    width: 100vw;
+    height: 140px;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: -webkit-sticky; 
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+    /* box-shadow: 0 2px 2px -2px rgba(0,0,0,.3); */
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16);
+}
+
+.logo{
+    margin-left: 8px;
+    max-width: 80px;
+    margin-top: 5px;
+}
+
+.searchTree{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: -60px;
+}
+
+.treeIcon{
+    list-style-type: none;
+    margin-right: 24px;
+    cursor: pointer;
+    font-size: 25px;
+    color: rgb(57, 57, 57);
+}
+
+
+@media only screen and (min-width: 768px) {
+
+    .navigationContent{
+        height: 120px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo{
+        max-width: 120px;
+        margin-top: 5px;
+    }
+
+     .searchTree{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: -4px;
+    }
+
+}
+
+@media only screen and (min-width: 1024px){
+
+    .searchTree{
+        flex-direction: row;
+        margin-right: 10px;
+    }
+
+    .treeIcon{
+        margin-bottom: 2px;
+    }
+
+    .treeIcon:hover{
+        color: #CC9C4E;
+    }
+    .treeIcon:hover:after{
+        content: "Trip List";
+        position: absolute;
+        top: 48px;
+        right: 476px;
+        width: fit-content;
+        background: black;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        text-align: center;
+    }
+}
