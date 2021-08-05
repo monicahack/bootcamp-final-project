@@ -3,9 +3,11 @@
     <ng-container *ngIf="park.data.length">
         <div class="parkDetailItem" *ngFor="let parks of park.data, let i =index;">
             <img class="parkDetailImg" src="{{parks.images[0].url}}" onerror="this.style='object-fit:contain'; this.src='./assets/mountain-view.png';">
-            <span class = "parkDetailDesignation">{{parks.designation}}</span>
-            <button class="favoriteItem" (click)="toggleFavorite(parks)"><fa-icon [icon]="faTree" [ngClass]="parks.isFavorite? 'favColorChange' : 'favColorSolid'"></fa-icon></button>
-            
+            <div class="parkDetailIcons">
+                <span class = "parkDetailDesignation">{{parks.designation}}</span>
+                <button class="favoriteItem" (click)="toggleFavorite(parks)"><fa-icon [icon]="faTree" [ngClass]="parks.isFavorite? 'favColorChange' : 'favColorSolid'"></fa-icon></button>
+            </div>
+
             <h2 class="parkDetailName">{{parks.fullName}}</h2>
             <h3 class ="parkDetailAddress">{{parks.addresses[0].city}}, {{parks.addresses[0].stateCode}}</h3>
             <h4 *ngIf="parks.description">Description</h4>
