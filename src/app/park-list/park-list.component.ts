@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FavoriteService } from '../favorite.service';
 import { faTree } from '@fortawesome/free-solid-svg-icons';
 import { states } from '../states-list/states-list.component';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-park-list',
@@ -18,18 +19,16 @@ export class ParkListComponent implements OnInit {
   park: Park[] = [];
   faTree = faTree;
   isSearched: boolean = false;
-
-  constructor(
-    public api: NpsApiService,
-    private route: ActivatedRoute,
-    public favorite: FavoriteService
-  ) {}
+  title = 'Park List | Go Park Yourself';
+  
+  constructor(public api: NpsApiService, private route: ActivatedRoute, public favorite: FavoriteService, private titleService: Title) {}
 
   queryParam: string = '';
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
       this.stateCode = params['stateCode'];
+      this.titleService.setTitle(this.title);
       let search = params.search;
       // lines 38-43 are how we got the heading on results to display 'parks in statename'
       // this is linked to the custom created states array and matching 
