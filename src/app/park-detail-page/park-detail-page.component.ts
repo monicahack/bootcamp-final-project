@@ -19,31 +19,32 @@ export class ParkDetailPageComponent implements OnInit {
   faTree = faTree;
   title = 'Park Detail | Go Park Yourself';
 
-  constructor(public api:NpsApiService, private route:ActivatedRoute, public favorite: FavoriteService, private titleService: Title) { }
+  constructor(
+    public api:NpsApiService, 
+    private route:ActivatedRoute, 
+    public favorite: FavoriteService, 
+    private titleService: Title
+  ) { }
 
   ngOnInit(): void {
     //sets page title
     this.titleService.setTitle(this.title);
-    //park by park code param
+    //park api with park code param
     this.route.params.subscribe((params) => {
       this.parkCode = params['parkCode'];
     this.api.getParkDetails(this.parkCode).subscribe((data) => {
       this.park = data;
       console.log(this.park.data);
-      //loops thru to check for if favorites
-      this.park.forEach((item: Park) => {
-        item.isFavorite = this.favorite.isFavorited(item);
-      })
+    //webcam api
+    this.api.getWebcam(this.parkCode).subscribe((data) => {
+      this.webcam = data;
+      console.log(this.webcam.data);
+    });  
+    //loops thru to check for if favorites
+    this.park.forEach((item: Park) => {
+      item.isFavorite = this.favorite.isFavorited(item);
+    })
       console.log(this.park.data);
-    });
-});
-
-//webcam
-  this.route.params.subscribe((params) => {
-    this.parkCode = params['parkCode'];
-  this.api.getWebcam(this.parkCode).subscribe((data) => {
-    this.webcam = data;
-    console.log(this.webcam.data);
     });
   });
 }
