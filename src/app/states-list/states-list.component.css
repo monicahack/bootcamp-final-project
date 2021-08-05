@@ -9,7 +9,6 @@ body{ margin: 20px;}
 .statesButtonArea {
     padding: 0;
     margin: 10px;
-    list-style: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
