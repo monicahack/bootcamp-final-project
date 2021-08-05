@@ -1,4 +1,4 @@
-<app-search (search)="keywordSearch($event)"></app-search>
+<!-- <app-search (search)="keywordSearch($event)"></app-search> -->
 <div class="pageContent">
   <div *ngIf="!isSearched else elseBlock">
     <h2>Parks in {{stateName}}</h2>
@@ -14,7 +14,7 @@
             class="parkImage"
             loading="lazy"
             src="{{ parks.images[0].url }}"
-            onerror="this.src='/assets/mountain-view.png';"
+            onerror="this.src='./assets/mountain-view.png';"
             />
           </a>    
             

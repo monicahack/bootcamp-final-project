@@ -9,7 +9,6 @@ body{ margin: 20px;}
 .statesButtonArea {
     padding: 0;
     margin: 10px;
-    list-style: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,6 +21,7 @@ body{ margin: 20px;}
     padding: 10px 20px;
     margin-bottom: 16px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: transform .45s ease, background .45s ease;
 }
 
 
@@ -44,10 +44,14 @@ body{ margin: 20px;}
 
 }
 
-
 @media only screen and (min-width: 1024px) {
     .statesListing {
         width: 30vw;
+    }
+
+    .statesListing:hover{
+        background-color: #202b22;
+        transform: scale(.97);
     }
 
 }

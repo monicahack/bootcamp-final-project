@@ -1,29 +1,40 @@
 body{ margin: 20px;}
 
 .searchArea {
-    /* width: 100%; */
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    margin: 0px 10px 30px 10px;
+    align-self: center;
+    margin-left: 10px;
+    margin-top: 6px;
+    width: 100vw;
 }
 
 input {
-    width: 76%;
-    margin-right: 10px;
+    width: 100%;
+    margin-right: 8px;
+    margin-left: 8px;
     padding: 9px;
     background-color: rgb(227, 227, 227);
     border: none;
     border-radius: 5px;
-    height: 23px;
-    font-size: 14px;
+    height: 28px;
+    font-size: 13px;
     padding-left: 16px;
 }
 
 button {
-    width: 24%;
-    padding: 10px;
+    width: auto;
+    height: 46px;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+fa-icon{
+    font-size: 18px;
 }
 
 .searchField{
@@ -31,7 +42,6 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    justify-content: space-evenly;
     align-items: center;
     margin-top: 20px;
 }
@@ -39,27 +49,15 @@ button {
 
 @media only screen and (min-width: 768px) {
     .searchArea {
-        margin: 20px 10px 30px 10px;
+        max-width: 400px;
+        margin-top: -10px;
     }
 
-    .searchField{
-        width: 70%;
-    }
-
-    input {
-        height: 36px;
-        font-size: 1em;
-    }
     
-    button {
-        width: 24%;
-        padding: 14px;
-        font-size: 1em;
-    }
 }
 
 @media only screen and (min-width: 1024px) {
-    .searchField{
-        width: 70%;
+    .searchArea {
+        max-width: 400px;
     }
 }

@@ -11,7 +11,6 @@ import { Title } from '@angular/platform-browser';
   selector: 'app-park-list',
   templateUrl: './park-list.component.html',
   styleUrls: ['./park-list.component.css'],
-
 })
 export class ParkListComponent implements OnInit {
   parkCode: string = '';
@@ -30,35 +29,49 @@ export class ParkListComponent implements OnInit {
     this.route.queryParams.subscribe((params) => {
       this.stateCode = params['stateCode'];
       this.titleService.setTitle(this.title);
-      const selectedState= states.find((state:any) => state.stateCode === this.stateCode)
-      if (selectedState){this.stateName=selectedState.stateName}
-      this.api.getParks(this.stateCode).subscribe((data) => {
-        this.park = data.data;
-        this.park.forEach((item: Park) => {
-          item.isFavorite = this.favorite.isFavorited(item);
-          // line 33 Setting item that is favorited to what it returns
-          })
-      })
+      let search = params.search;
+      // lines 38-43 are how we got the heading on results to display 'parks in statename'
+      // this is linked to the custom created states array and matching 
+      // the state code with the state code in the URL and then 
+      // outputting the state name from the custom array
+      const selectedState = states.find(
+        (state: any) => state.stateCode === this.stateCode
+      );
+      if (selectedState) {
+        this.stateName = selectedState.stateName;
+      }
+      // lines 38-43 are how we got the heading on results to display 'parks in statename'
+      if (search) {
+        this.keywordSearch(search);
+      } else {
+        this.api.getParks(this.stateCode).subscribe((data) => {
+          this.park = data.data;
+          this.park.forEach((item: Park) => {
+            item.isFavorite = this.favorite.isFavorited(item);
+            // line 33 Setting item that is favorited to what it returns
+          });
         });
+      }
+    });
   }
- 
+
   toggleFavorite(park: Park) {
     this.favorite.toggleFavorite(park);
-    }
+  }
 
-    keywordSearch(search: any) {
-      this.api
-        .searchParks({
-          fullName: search.fullName,
-        })
-        .subscribe((data) => {
-          if (data) {
-            this.park = data.data;
-            console.log(this.park);
-            this.isSearched = true;
-          } else {
-            this.park = [];
-          }
-        });
-    }
+  keywordSearch(search: string) {
+    this.api
+      .searchParks({
+        fullName: search,
+      })
+      .subscribe((data) => {
+        if (data) {
+          this.park = data.data;
+          console.log(this.park);
+          this.isSearched = true;
+        } else {
+          this.park = [];
+        }
+      });
+  }
 }

@@ -1,24 +1,38 @@
+body {
+    margin: 20px;
+}
+
 .parkDetail {
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    flex-direction: column;
     align-content: center;
     margin: 20px;
 }
 
-h2.parkDetailName {
-    max-width: 300px;
-    line-height: 25px;
+.parkDetailIcons {
+    display: flex;
+    align-items: center;
+    margin: 0;
 }
 
-h3.parkDetailAddress {
-    margin-top: -20px;
+h2.parkDetailName {
+    margin-top: -2px;
+    margin-bottom: 6px;
+}
+
+
+h3 {
+    line-height: 24px;
+    margin: 0px;
+    max-width: 90%;
+    font-weight: 500;
+    align-self: center;
 }
 
 .parkDetailDesignation {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     display: block;
-    margin-top: -10px;
     font-weight: 400;
     background: #cc9a4b;
     color: white;
@@ -27,16 +41,18 @@ h3.parkDetailAddress {
     border-radius: 6px;
     padding-left: 6px;
     padding-right: 6px;
+    margin-top: 10px;
 } 
 
-p.parkDetailDescription, ul.parkDetailActivities, ul.parkDetailHours {
-    margin-top: -15px;
+.parkDetailItem {
+    width: 100%;
 }
 
 img.parkDetailImg {
-    max-width: 325px;
+    width: 100%;
+    object-fit: cover;
+    max-height: 370px;
     border-radius: 10px;
-    margin-top: 5px;
 }
 
 ul.parkDetailActivities, ul.parkDetailHours {
@@ -52,22 +68,32 @@ li {
     margin-left: -40px;
 }
 
-.favoriteItem {
-    position: absolute;
-    left: 325px;
+/* .favoriteItem {
+    display: inline;
+    float: right;
+    padding: 0;
+} */
+
+button.favoriteItem {
+    background-color: transparent;
 }
 
-@media only screen and (min-width: 768px) {
-    h2.parkDetailName {
-        max-width: 800px;
-    }
+button.parkDetailWebcam {
+    margin-right: 12px;
+    margin-bottom: 12px;
+}
 
-    .favoriteItem {
-        left: 725px;
+@media only screen and (min-width: 768px) {     
+    .parkDetail {
+        margin: 20px 10% 20px 10%;
     }
     
     img.parkDetailImg {
-        max-width: 725px;
+        max-height: 470px;
+    }
+
+    h3 {
+        max-width: 100%;
     }
 
     ul.parkDetailActivities {
@@ -77,12 +103,19 @@ li {
     }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) {   
+    .parkDetail {
+        margin: 20px 10% 20px 10%;
+    }
+    
     img.parkDetailImg {
-        max-width: 850px;
+        max-height: 470px;
     }
 
-    .favoriteItem {
-        left: 850px;
-    }
+    /* .favoriteItem {
+        padding: 0;
+        position: absolute;
+        left: 77%;
+    } */
+
 }

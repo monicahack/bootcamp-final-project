@@ -1,75 +1,86 @@
-/* button{
-    font-family: 'Poppins', sans-serif;
-    height: 40px; 
-    this was making the text 
-    on the buttons on the landing page 
-    not centered vertically since button 
-    styling already exists on styles.css
-} */
+body,html {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+
+.landingPageContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 8px 10px;
+    height: 84vh;
+}
 
 .buttonSurprise{
     background-color: #94C9A9;
-    color:rgb(56, 40, 40);
+    color:#354739
+}
+
+.planSectionCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 50;
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: #94C9A9;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .planSection{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    background-color: #94C9A9;
-    width: 100%;
-    height: 50vh;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.noPlanSection{
+.noPlanSectionCard{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    background-color:#354739;
+    flex: 50;
     width: 100%;
-    height: 50vh;
+    background-color:#354739;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+.noPlanSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .tentIcon{
-    max-width: 200px;
+    max-width: 160px;
     margin-bottom: 30px;
 }
 .thinkingIcon{
-    max-width: 200px;
+    max-width: 160px;
     margin-bottom: 30px;
 }
 
-.landingPageContent{
-    margin: 10px;
-}
-
 @media only screen and (min-width: 768px) {
-    .planSection{
-        display: flex;
-        justify-content: center;
-        background-color:#94C9A9;
-        width: 100%;
-        height: 50vh;
-        margin-bottom: 20px;
-        border-radius: 5px;
-    
+    .landingPageContent{
+        flex-direction: row;
+        height: 100vh;
     }
-    
-    .noPlanSection{
-        display: flex;
-        justify-content: center;
-        background-color:#354739;
-        width: 100%;
-        height: 50vh;
-        border-radius: 5px;
+
+    .planSectionCard{
+        flex: 50;
+        margin-bottom: 0px;
+        margin-right: 10px;
     }
+
+    .noPlanSectionCard{
+        flex: 50;
+    }
+
     .buttonSurprise{
         background-color: #94C9A9;
     }
@@ -109,6 +120,9 @@
     .thinkingIcon{
         max-width: 300px;
         margin-bottom: 30px;
+    }
+    .buttonSurprise:hover{
+        background-color: #77a388;
     }
 
 }
