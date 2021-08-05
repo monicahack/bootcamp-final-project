@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FavoriteService } from '../favorite.service';
 import { faTree } from '@fortawesome/free-solid-svg-icons';
 import { states } from '../states-list/states-list.component';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-park-list',
@@ -19,14 +20,16 @@ export class ParkListComponent implements OnInit {
   park: Park[] = [];
   faTree = faTree;
   isSearched: boolean = false;
+  title = 'Park List | Go Park Yourself';
   
-  constructor(public api: NpsApiService, private route: ActivatedRoute, public favorite: FavoriteService) {}
+  constructor(public api: NpsApiService, private route: ActivatedRoute, public favorite: FavoriteService, private titleService: Title) {}
 
   queryParam: string = '';
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
       this.stateCode = params['stateCode'];
+      this.titleService.setTitle(this.title);
       const selectedState= states.find((state:any) => state.stateCode === this.stateCode)
       if (selectedState){this.stateName=selectedState.stateName}
       this.api.getParks(this.stateCode).subscribe((data) => {
