@@ -9,7 +9,6 @@ export class FavoriteService {
   parkCode: string = '';
   isFavorite!: boolean;
   favoriteList: Park[] = [];
-  // park: any = {data:[]};
 
   constructor(public client: HttpClient) { }
 
@@ -19,8 +18,10 @@ toggleFavorite(park: Park) {
     park.isFavorite = false;
     let index = this.favoriteList.findIndex((item) => park.parkCode === item.parkCode);
     console.log(index);
+    //adds favorite to array
     this.favoriteList.splice(index, 1);
   } else {
+    //if is favorite, pushes to park array
     park.isFavorite = true;
     this.favoriteList.push(park);
   }
@@ -38,6 +39,7 @@ isFavorited(park: Park){
 }
 
 onClick() {
+  //removes favorite from array
   this.isFavorite = !this.isFavorite;
   console.log('Is favorite value: ' + this.isFavorite);
   }
