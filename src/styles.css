@@ -31,19 +31,6 @@ button {
     width: 200px;
 }
 
-.treeIcon{
-    list-style-type: none;
-    margin-right: 24px;
-    cursor: pointer;
-    font-size: 25px;
-    color: rgb(57, 57, 57);
-}
-
-.logo{
-    max-width: 80px;
-    margin-top: 5px;
-}
-
 .favoriteItem {
     width: auto;
     border: none;
@@ -59,36 +46,12 @@ button {
 .favColorChange {
     color: #1c761c;
 }
-
-.navigationContent{
-    margin: 0px;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* flex-direction: ; */
-    background-color: rgba(255, 255, 255, 0.9);
-    position: -webkit-sticky; 
-    position: sticky;
-    top: 0px;
-    z-index: 1;
-    /* box-shadow: 0 2px 2px -2px rgba(0,0,0,.3); */
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16);
-}
-
+/* 
 .searchTree{
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: center;
-}
-
-.leftLogoArea{
-    margin-left: 20px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
+} */
 
 /* .navItems{
     display: flex;
@@ -96,49 +59,14 @@ button {
 } */
 
 @media only screen and (min-width: 768px) {
-    /* nav{
-        display: flex;
-    } */
 
-    .navigationContent{
-        height: 120px;
-    }
-
-    .logo{
-        max-width: 120px;
-        margin-top: 5px;
-    }
-
-    .treeIcon {
-       margin-right: 38px; 
-       font-size: 30px;
-    }
-    
 
 }
 
 @media only screen and (min-width: 1024px){
+
     button:hover{
         background-color: #202b22;
-    }
-
-    .treeIcon:hover{
-        color: #CC9C4E;
-    }
-    
-    .treeIcon:hover:after{
-        content: "Trip List";
-        /* display: block; */
-        position: absolute;
-        top: 45px;
-        right: 380px;
-        width: fit-content;
-        background: black;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 12px;
-        text-align: center;
     }
 
 }
