@@ -14,7 +14,10 @@ export class MyTripListComponent implements OnInit {
   faTree = faTree;
   title = 'My Trip List | Go Park Yourself';
 
-  constructor(public favorite: FavoriteService, private titleService: Title) { }
+  constructor(
+    public favorite: FavoriteService, 
+    private titleService: Title
+  ) { }
 
   ngOnInit(): void {
     //sets page title
