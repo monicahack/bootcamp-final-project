@@ -32,6 +32,12 @@ h3 {
     border-radius: 10px;
     margin: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: transform .45s ease, background .45s ease;
+}
+
+.favoriteListItem:hover{
+    background: #cc9a4b;
+    transform: scale(.97);
 }
 
 .cardContent {
@@ -58,9 +64,6 @@ a.detailLink {
     color: black;
 }
 
-a.detailLink:visited {
-    color: #cc9a4b;
-}
 
 
 @media only screen and (min-width: 768px) {
