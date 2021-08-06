@@ -41,7 +41,7 @@ export class ParkDetailPageComponent implements OnInit {
       console.log(this.webcam.data);
     });  
     //loops thru to check for if favorites
-    this.park.forEach((item: Park) => {
+    Array.from(this.park).forEach((item: any) => {
       item.isFavorite = this.favorite.isFavorited(item);
     })
       console.log(this.park.data);
