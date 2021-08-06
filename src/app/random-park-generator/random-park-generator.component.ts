@@ -3,15 +3,13 @@ import { ActivatedRoute } from '@angular/router';
 import { NpsApiService } from '../nps-api.service';
 import { Park } from '../interface';
 import { FavoriteService } from '../favorite.service';
-import { faTree } from '@fortawesome/free-solid-svg-icons';
+import { faTree, faCompass } from '@fortawesome/free-solid-svg-icons';
 import { Title } from '@angular/platform-browser';
-
-
 
 @Component({
   selector: 'app-random-park-generator',
   templateUrl: './random-park-generator.component.html',
-  styleUrls: ['./random-park-generator.component.css']
+  styleUrls: ['./random-park-generator.component.css'],
 })
 export class RandomParkGeneratorComponent implements OnInit {
   title = 'Random Park | Go Park Yourself';
@@ -20,6 +18,7 @@ export class RandomParkGeneratorComponent implements OnInit {
   data: Park[] = [];
   randomNumber = Math.floor((Math.random() * 467) + 1);
   faTree = faTree;
+  faCompass = faCompass;
 
   spinnerDisplay={
     "display": false,
