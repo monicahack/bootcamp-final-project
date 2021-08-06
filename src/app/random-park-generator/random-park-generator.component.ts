@@ -34,7 +34,7 @@ export class RandomParkGeneratorComponent implements OnInit {
       // Line 35 makes the data available from NPS API
       this.api.getParks().subscribe((data)=>{
         this.park = data;
-        this.park.forEach((item: Park) => {
+        Array.from(this.park).forEach((item: any) => {
           item.isFavorite = this.favorite.isFavorited(item);
         })
       }) 
