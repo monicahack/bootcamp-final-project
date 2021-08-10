@@ -7,7 +7,10 @@ body {
     justify-content: center;
     flex-direction: column;
     align-content: center;
-    margin: 20px;
+}
+
+.parkDetailNameLocation{
+    margin-bottom: 40px;
 }
 
 .parkDetailIcons {
@@ -30,6 +33,14 @@ h3 {
     align-self: center;
 }
 
+h4{
+    margin-bottom: -3px;
+}
+
+p, ul{
+    margin-bottom: 40px;
+}
+
 .parkDetailDesignation {
     margin-bottom: 15px;
     display: block;
@@ -44,15 +55,27 @@ h3 {
     margin-top: 10px;
 } 
 
-.parkDetailItem {
-    width: 100%;
+/* .parkDetailItem {
+    width: 100vw;
+} */
+
+.imageContainer{
+    max-width: 100vw;
+    overflow: hidden;
+    max-height: 680px;
 }
 
 img.parkDetailImg {
     width: 100%;
-    object-fit: cover;
-    max-height: 370px;
-    border-radius: 10px;
+    object-fit: contain;
+    /* width: 100vw; */
+    /* object-fit: cover; */
+    /* max-height: 370px; */
+    /* border-radius: 10px; */
+}
+
+.parkDetailContents{
+    margin: 0px 20px;
 }
 
 ul.parkDetailActivities, ul.parkDetailHours {
@@ -79,12 +102,12 @@ button.parkDetailWebcam {
 
 @media only screen and (min-width: 768px) {     
     .parkDetail {
-        margin: 20px 10% 20px 10%;
+        /* margin: 20px 10% 20px 10%; */
     }
     
-    img.parkDetailImg {
+    /* img.parkDetailImg {
         max-height: 470px;
-    }
+    } */
 
     h3 {
         max-width: 100%;
@@ -98,12 +121,27 @@ button.parkDetailWebcam {
 }
 
 @media only screen and (min-width: 1024px) {   
+    /* display left & right */
+    /* .parkDetailTop{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .parkDetailRight{
+        margin-left: 20px;
+    }
+
     .parkDetail {
         margin: 20px 10% 20px 10%;
     }
     
     img.parkDetailImg {
+        max-width: 40vw;
         max-height: 470px;
+    } */
+
+    .parkDetailContents{
+        margin: 20px 10% 50px 10%;
     }
 
 }
