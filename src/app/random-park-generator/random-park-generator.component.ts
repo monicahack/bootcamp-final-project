@@ -30,6 +30,7 @@ export class RandomParkGeneratorComponent implements OnInit {
 
   ngOnInit(): void {
     this.titleService.setTitle(this.title);
+      // .subscribes allow for use of response data from the API
       // Line 35 makes the data available from NPS API
       this.api.getParks().subscribe((data)=>{
         this.park = data;
