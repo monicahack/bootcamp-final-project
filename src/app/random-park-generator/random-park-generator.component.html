@@ -1,11 +1,12 @@
-<div class="loaderContainer">
-    <p>Please wait...</p>
-    <div class="compassLoader"><fa-icon [icon]="faCompass" [spin]="true"></fa-icon></div>
-</div>
+    <div class="loaderContainer">
+        <div class="loaderElements">
+            <div class="compassLoader"><fa-icon [icon]="faCompass" [spin]="true"></fa-icon></div>
+        </div>
+    </div>
 
 <div class="content">
     <h1>We think you'd really like...</h1>
-        <div class="randomParkCard">
+        <div class="randomParkCard" *ngIf="park.data[this.randomNumber]">
             <img class="randomImg" src="{{park.data[this.randomNumber].images[0].url}}">
             <div class="randomParkContent">
                 <div class="parkCardHeader">

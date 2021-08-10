@@ -224,7 +224,9 @@ a.detailLink {
     }
 
     .parkListItem:hover{
-        background: #cc9a4b;
+        background: #e1f4d8;
+        /* background: #f4e9d8; */
+        /* background: #cc9a4b; */
         transform: scale(.97);
     }
 
