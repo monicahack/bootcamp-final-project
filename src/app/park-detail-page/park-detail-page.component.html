@@ -2,18 +2,25 @@
     <!-- ng-container is workaround to use ngIf and ngFor together in next div -->
     <ng-container *ngIf="park.data.length">
         <div class="parkDetailItem" *ngFor="let parks of park.data, let i =index;">
-            <img class="parkDetailImg" src="{{parks.images[0].url}}" onerror="this.style='object-fit:contain'; this.src='./assets/mountain-view.png';">
-            <div class="parkDetailIcons">
-                <span class = "parkDetailDesignation">{{parks.designation}}</span>
-                <button class="favoriteItem" (click)="toggleFavorite(parks)"><fa-icon [icon]="faTree" [ngClass]="parks.isFavorite? 'favColorChange' : 'favColorSolid'"></fa-icon></button>
+            <div class="imageContainer">
+                <img class="parkDetailImg" src="{{parks.images[0].url}}" onerror="this.style='object-fit:contain'; this.src='./assets/mountain-view.png';">
             </div>
-
-            <h2 class="parkDetailName">{{parks.fullName}}</h2>
-            <h3 class ="parkDetailAddress">{{parks.addresses[0].city}}, {{parks.addresses[0].stateCode}}</h3>
-            <h4 *ngIf="parks.description">Description</h4>
-            <p class="parkDetailDescription">{{parks.description}}</p>
+            <div class="parkDetailContents">
+                <div class="parkDetailRight">
+                    <div class="parkDetailIcons">
+                        <span class = "parkDetailDesignation">{{parks.designation}}</span>
+                        <button class="favoriteItem" (click)="toggleFavorite(parks)"><fa-icon [icon]="faTree" [ngClass]="parks.isFavorite? 'favColorChange' : 'favColorSolid'"></fa-icon></button>
+                    </div>
+                    <div class="parkDetailNameLocation">
+                        <h2 class="parkDetailName">{{parks.fullName}}</h2>
+                        <h3 class ="parkDetailAddress">{{parks.addresses[0].city}}, {{parks.addresses[0].stateCode}}</h3> 
+                    </div>
+                    <h4 *ngIf="parks.description">Description</h4>
+                    <p class="parkDetailDescription">{{parks.description}}</p>
+                    <h4 *ngIf="parks.weatherInfo.length">Weather Info</h4>
+                    <p>{{parks.weatherInfo}}</p>
+                </div>
             <h4 *ngIf="parks.activities.length">Activities</h4>
-            
             <ul class="parkDetailActivities">
                 <!-- slice limits the number of activities displayed -->
                 <li *ngFor="let activity of parks.activities | slice:0:50; let i =index;">{{parks.activities[i].name}}</li>
@@ -39,5 +46,7 @@
                 <!-- external link to NPS park page -->
                 <p class="parkDetailNPS">Visit <a href="{{parks.url}}">National Park Service</a> for more park details.</p>    
         </div>
+    </div>
+
     </ng-container>
 </div>
