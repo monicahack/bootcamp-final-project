@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { MyTripListComponent } from './my-trip-list/my-trip-list.component';
 import { StatesListComponent } from './states-list/states-list.component';
-import { SeasonSelectorComponent } from './season-selector/season-selector.component';
 import { RandomParkGeneratorComponent } from './random-park-generator/random-park-generator.component';
 import { ParkListComponent } from './park-list/park-list.component';
 import { AppLandingPageComponent } from './app-landing-page/app-landing-page.component';
@@ -22,7 +21,6 @@ import { FormsModule } from '@angular/forms';
     SearchComponent,
     MyTripListComponent,
     StatesListComponent,
-    SeasonSelectorComponent,
     RandomParkGeneratorComponent,
     ParkListComponent,
     AppLandingPageComponent,

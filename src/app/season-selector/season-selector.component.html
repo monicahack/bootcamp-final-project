@@ -1,5 +1,0 @@
-<div class="buttonArea">
-    <button class="seasonsListing" *ngFor="let season of seasons; let i = index" [routerLink]="['/park-list']" [queryParams]="{ season: season.seasonType }">
-        <h2 class="seasonType" >{{season.seasonType}}</h2>
-  </button>
-</div>
