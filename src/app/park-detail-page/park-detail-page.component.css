@@ -96,14 +96,14 @@ button.favoriteItem {
 }
 
 button.parkDetailWebcam {
+    margin-top: 12px;
     margin-right: 12px;
-    margin-bottom: 12px;
 }
 
 @media only screen and (min-width: 768px) {     
-    .parkDetail {
-        /* margin: 20px 10% 20px 10%; */
-    }
+    /* .parkDetail {
+        margin: 20px 10% 20px 10%;
+    } */
     
     /* img.parkDetailImg {
         max-height: 470px;
