@@ -68,7 +68,7 @@ p, ul{
 img.parkDetailImg {
     width: 100%;
     object-fit: contain;
-    object-position: center -180px;
+    object-position: 50% 50%;
     /* width: 100vw; */
     /* object-fit: cover; */
     /* max-height: 370px; */
